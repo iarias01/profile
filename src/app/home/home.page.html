@@ -1,0 +1,490 @@
+<ion-content
+  [fullscreen]="true"
+  #content
+  scrollEvents="true"
+  (ionScroll)="onScroll($event)"
+>
+  <!-- ================================================================
+       NAVBAR
+  ================================================================ -->
+  <nav class="navbar" [class.navbar--scrolled]="navScrolled">
+    <div class="navbar__container">
+      <div class="navbar__brand" (click)="scrollTo('hero')">IA.</div>
+
+      <ul class="navbar__links">
+        <li>
+          <a class="navbar__link" (click)="scrollTo('hero')"
+            >{{ 'nav.home' | translate }}</a
+          >
+        </li>
+        <li>
+          <a class="navbar__link" (click)="scrollTo('about')"
+            >{{ 'nav.about' | translate }}</a
+          >
+        </li>
+        <li>
+          <a class="navbar__link" (click)="scrollTo('skills')"
+            >{{ 'nav.skills' | translate }}</a
+          >
+        </li>
+        <li>
+          <a class="navbar__link" (click)="scrollTo('services')"
+            >{{ 'nav.services' | translate }}</a
+          >
+        </li>
+        <li>
+          <a class="navbar__link" (click)="scrollTo('portfolio')"
+            >{{ 'nav.portfolio' | translate }}</a
+          >
+        </li>
+        <li>
+          <a class="navbar__link" (click)="scrollTo('contact')"
+            >{{ 'nav.contact' | translate }}</a
+          >
+        </li>
+      </ul>
+
+      <div class="navbar__actions">
+        <button class="navbar__lang-btn" (click)="toggleLang()">
+          {{ currentLang === 'es' ? 'EN' : 'ES' }}
+        </button>
+        <button
+          class="navbar__hamburger"
+          (click)="toggleMenu()"
+          aria-label="Menu"
+        >
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile fullscreen menu -->
+  <div class="mobile-menu" [class.mobile-menu--open]="menuOpen">
+    <button
+      class="mobile-menu__close"
+      (click)="closeMenu()"
+      aria-label="Cerrar"
+    >
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <ul class="mobile-menu__links">
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('hero')"
+          >{{ 'nav.home' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('about')"
+          >{{ 'nav.about' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('skills')"
+          >{{ 'nav.skills' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('services')"
+          >{{ 'nav.services' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('portfolio')"
+          >{{ 'nav.portfolio' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" (click)="scrollTo('contact')"
+          >{{ 'nav.contact' | translate }}</a
+        >
+      </li>
+    </ul>
+    <button class="mobile-menu__lang-btn" (click)="toggleLang()">
+      {{ currentLang === 'es' ? 'Switch to EN' : 'Cambiar a ES' }}
+    </button>
+  </div>
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section class="hero" id="hero">
+    <div
+      class="hero__bg"
+      [style.background-image]="'url(assets/header.png)'"
+    ></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content animate__animated animate__fadeIn">
+      <div class="hero__photo-ring animate__animated animate__zoomIn">
+        <img class="hero__photo" src="assets/yo.PNG" alt="Ignacio Arias" />
+      </div>
+
+      <span
+        class="hero__greeting animate__animated animate__fadeInUp animate__delay-1s"
+      >
+        {{ 'hero.greeting' | translate }}
+      </span>
+      <h1
+        class="hero__name animate__animated animate__fadeInUp animate__delay-1s"
+      >
+        Ignacio Arias
+      </h1>
+      <div
+        class="hero__badge animate__animated animate__fadeInUp animate__delay-2s"
+      >
+        {{ 'hero.title' | translate }}
+      </div>
+      <p
+        class="hero__subtitle animate__animated animate__fadeInUp animate__delay-2s"
+      >
+        {{ 'hero.subtitle' | translate }}
+      </p>
+
+      <div
+        class="hero__cta animate__animated animate__fadeInUp animate__delay-2s"
+      >
+        <button class="btn btn--primary" (click)="scrollTo('contact')">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          {{ 'hero.cta_contact' | translate }}
+        </button>
+        <button class="btn btn--outline" (click)="scrollTo('portfolio')">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          {{ 'hero.cta_portfolio' | translate }}
+        </button>
+      </div>
+
+      <div
+        class="hero__socials animate__animated animate__fadeInUp animate__delay-2s"
+      >
+        <a
+          class="hero__social"
+          href="https://wa.me/541167997544"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+        <a
+          class="hero__social"
+          href="https://www.linkedin.com/in/iarias89/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a
+          class="hero__social"
+          href="mailto:iariasdev1@gmail.com"
+          aria-label="Email"
+        >
+          <ion-icon name="mail-outline"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+    <a
+      class="hero__scroll-down"
+      (click)="scrollTo('about')"
+      aria-label="Scroll"
+    >
+      <ion-icon
+        name="chevron-down-outline"
+        class="animate__animated animate__bounce animate__infinite animate__slow"
+      ></ion-icon>
+    </a>
+  </section>
+
+  <!-- ================================================================
+       ABOUT
+  ================================================================ -->
+  <section class="about section" id="about">
+    <div class="about__container container">
+      <div class="about__text">
+        <span class="label">{{ 'about.section_label' | translate }}</span>
+        <h2 class="title">{{ 'about.section_title' | translate }}</h2>
+        <p class="about__paragraph">{{ 'about.paragraph1' | translate }}</p>
+        <p class="about__paragraph">{{ 'about.paragraph2' | translate }}</p>
+
+        <div class="about__stats">
+          <div class="about__stat">
+            <span class="about__stat-value"
+              >{{ 'about.stat1_value' | translate }}</span
+            >
+            <span class="about__stat-label"
+              >{{ 'about.stat1_label' | translate }}</span
+            >
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-value"
+              >{{ 'about.stat2_value' | translate }}</span
+            >
+            <span class="about__stat-label"
+              >{{ 'about.stat2_label' | translate }}</span
+            >
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-value"
+              >{{ 'about.stat3_value' | translate }}</span
+            >
+            <span class="about__stat-label"
+              >{{ 'about.stat3_label' | translate }}</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="about__visual">
+        <div class="about__frame">
+          <img class="about__img" src="assets/yo.PNG" alt="Ignacio Arias" />
+          <div class="about__frame-deco"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SKILLS
+  ================================================================ -->
+  <section class="skills section" id="skills">
+    <div class="skills__container container">
+      <div class="skills__header">
+        <span class="label">{{ 'skills.section_label' | translate }}</span>
+        <h2 class="title">{{ 'skills.section_title' | translate }}</h2>
+      </div>
+      <div class="skills__grid">
+        <div class="skills__item" *ngFor="let skill of skills">
+          <div class="skills__item-header">
+            <span class="skills__item-name">{{ skill.name }}</span>
+            <span class="skills__item-pct">{{ skill.level }}%</span>
+          </div>
+          <div class="skills__bar">
+            <div class="skills__bar-fill" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SERVICES
+  ================================================================ -->
+  <section class="services section" id="services">
+    <div class="services__container container">
+      <div class="services__header">
+        <span class="label">{{ 'services.section_label' | translate }}</span>
+        <h2 class="title">{{ 'services.section_title' | translate }}</h2>
+      </div>
+      <div class="services__grid">
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="code-slash-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.web_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.web_desc' | translate }}
+          </p>
+        </div>
+
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.mobile_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.mobile_desc' | translate }}
+          </p>
+        </div>
+
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="layers-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.pwa_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.pwa_desc' | translate }}
+          </p>
+        </div>
+
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="megaphone-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.landing_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.landing_desc' | translate }}
+          </p>
+        </div>
+
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="bulb-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.consulting_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.consulting_desc' | translate }}
+          </p>
+        </div>
+
+        <div class="services__card">
+          <div class="services__card-icon">
+            <ion-icon name="git-network-outline"></ion-icon>
+          </div>
+          <h3 class="services__card-title">
+            {{ 'services.backend_title' | translate }}
+          </h3>
+          <p class="services__card-desc">
+            {{ 'services.backend_desc' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       PORTFOLIO
+  ================================================================ -->
+  <section class="portfolio section" id="portfolio">
+    <div class="portfolio__container container">
+      <div class="portfolio__header">
+        <span class="label">{{ 'portfolio.section_label' | translate }}</span>
+        <h2 class="title">{{ 'portfolio.section_title' | translate }}</h2>
+      </div>
+
+      <div class="portfolio__filters">
+        <button
+          *ngFor="let f of filters"
+          class="portfolio__filter-btn"
+          [class.portfolio__filter-btn--active]="activeFilter === f.key"
+          (click)="setFilter(f.key)"
+        >
+          {{ f.labelKey | translate }}
+        </button>
+      </div>
+
+      <div class="portfolio__grid">
+        <div class="portfolio__card" *ngFor="let project of filteredProjects">
+          <div class="portfolio__card-thumb">
+            <div
+              class="portfolio__card-img"
+              [style.background-image]="'url(' + project.image + ')'"
+            ></div>
+            <div class="portfolio__card-hover">
+              <a
+                *ngIf="project.link"
+                class="btn btn--primary btn--sm"
+                [href]="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ 'portfolio.btn_view' | translate }}
+                <ion-icon name="open-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio__card-body">
+            <span class="portfolio__card-cat">{{ project.category }}</span>
+            <h3 class="portfolio__card-title">
+              {{ getProjectTitle(project) }}
+            </h3>
+            <p class="portfolio__card-desc">{{ getProjectDesc(project) }}</p>
+            <div class="portfolio__card-tags">
+              <span class="portfolio__tag" *ngFor="let tag of project.tags"
+                >{{ tag }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CONTACT
+  ================================================================ -->
+  <section class="contact section" id="contact">
+    <div class="contact__container container">
+      <div class="contact__header">
+        <span class="label">{{ 'contact.section_label' | translate }}</span>
+        <h2 class="title">{{ 'contact.section_title' | translate }}</h2>
+        <p class="contact__subtitle">{{ 'contact.subtitle' | translate }}</p>
+      </div>
+
+      <div class="contact__cards">
+        <a
+          class="contact__card"
+          href="https://wa.me/541167997544"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="contact__card-icon contact__card-icon--wa">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </div>
+          <h3 class="contact__card-title">
+            {{ 'contact.whatsapp' | translate }}
+          </h3>
+          <p class="contact__card-desc">
+            {{ 'contact.whatsapp_desc' | translate }}
+          </p>
+          <span class="contact__card-value">+54 11 6799-7544</span>
+        </a>
+
+        <a
+          class="contact__card"
+          href="https://www.linkedin.com/in/iarias89/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="contact__card-icon contact__card-icon--li">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </div>
+          <h3 class="contact__card-title">
+            {{ 'contact.linkedin' | translate }}
+          </h3>
+          <p class="contact__card-desc">
+            {{ 'contact.linkedin_desc' | translate }}
+          </p>
+          <span class="contact__card-value">linkedin.com/in/iarias89</span>
+        </a>
+
+        <a class="contact__card" href="mailto:iariasdev1@gmail.com">
+          <div class="contact__card-icon contact__card-icon--mail">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <h3 class="contact__card-title">{{ 'contact.email' | translate }}</h3>
+          <p class="contact__card-desc">
+            {{ 'contact.email_desc' | translate }}
+          </p>
+          <span class="contact__card-value">iariasdev1&#64;gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand" (click)="scrollTo('hero')">IA.</div>
+      <p class="footer__copy">{{ 'footer.copy' | translate }}</p>
+      <p class="footer__made">
+        {{ 'footer.made_with' | translate }}
+        <ion-icon name="heart" class="footer__heart"></ion-icon>
+        Angular & Ionic
+      </p>
+    </div>
+  </footer>
+</ion-content>

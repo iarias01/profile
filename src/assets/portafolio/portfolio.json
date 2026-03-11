@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "slug": "beatflow",
+    "title_es": "Beatflow",
+    "title_en": "Beatflow",
+    "description_es": "Aplicación multiplataforma para descubrir dónde bailar el ritmo que más te guste, desde salsa hasta electrónica. También permite encontrar academias y tomar clases. Disponible en App Store, Google Play y web.",
+    "description_en": "Cross-platform app to discover where to dance your favorite music style, from salsa to electronic. Also helps find academies and take dance classes. Available on App Store, Google Play, and web.",
+    "image": "assets/portafolio/beatflow.png",
+    "tags": ["Angular", "Ionic", "Capacitor", "NodeJS", "MongoDB"],
+    "link": "https://example.com/ecommerce",
+    "category": "mobile / web"
+  },
+  {
+    "id": 2,
+    "slug": "sgi",
+    "title_es": "SGI",
+    "title_en": "SGI",
+    "description_es": "Sistema de gestión de tickets multisectorial con seguimiento de incidencias, asignación de prioridades y monitoreo de infraestructura de sistemas en tiempo real. Diseñado para equipos técnicos de múltiples sectores.",
+    "description_en": "Multi-sector ticket management system with incident tracking, priority assignment, and real-time infrastructure monitoring. Designed for technical teams across multiple departments.",
+    "image": "assets/portafolio/sgi.png",
+    "tags": ["Angular", "PHP", "MySQL"],
+    "link": "https://sgi.grupo-gestion.com.ar/SGI/#/login",
+    "category": "web"
+  },
+  {
+    "id": 3,
+    "slug": "movinapp",
+    "title_es": "MovInApp",
+    "title_en": "MovInApp",
+    "description_es": "Sistema integral de inventario que combina una plataforma web de administración con una aplicación móvil para el control y movimiento de stock en tiempo real. Desarrollado para uso interno empresarial.",
+    "description_en": "Comprehensive inventory system combining a web administration platform with a mobile app for real-time stock control and movement. Developed for internal business use.",
+    "image": "assets/portafolio/movinapp.png",
+    "tags": ["Angular", "Ionic", "Capacitor", "PHP", "MySQL"],
+    "link": null,
+    "category": "mobile / web"
+  },
+  {
+    "id": 4,
+    "slug": "peluqueria",
+    "title_es": "Peluquería",
+    "title_en": "Hair Salon Scheduler",
+    "description_es": "Sistema de turnos y agenda online para peluquerías. Los clientes reservan su turno desde cualquier dispositivo y el negocio gestiona su calendario de manera simple, sin llamadas ni papeles.",
+    "description_en": "Online appointment and scheduling system for hair salons. Clients book their slot from any device while the business manages its calendar simply, without calls or paperwork.",
+    "image": "assets/portafolio/peluqueria.png",
+    "tags": ["Angular", "Ionic", "PHP", "MySQL"],
+    "link": "https://cristian-villagra.com.ar/#/login",
+    "category": "pwa"
+  },
+  {
+    "id": 5,
+    "slug": "lol-impostor",
+    "title_es": "LoL Impostor",
+    "title_en": "LoL Impostor",
+    "description_es": "Juego web multijugador inspirado en el clásico 'El Impostor', pero con los campeones del universo de League of Legends. Detectá al impostor entre los personajes antes de que sea demasiado tarde.",
+    "description_en": "Multiplayer web game inspired by the classic 'Impostor' mechanics, featuring champions from the League of Legends universe. Find the impostor among the characters before it's too late.",
+    "image": "assets/portafolio/impostor.png",
+    "tags": ["Angular", "Ionic", "Capacitor", "PHP", "MySQL"],
+    "link": "https://example.com/fitness",
+    "category": "pwa"
+  },
+  {
+    "id": 6,
+    "slug": "reproductor-avanzado",
+    "title_es": "Reproductor Avanzado",
+    "title_en": "Advanced Music Player",
+    "description_es": "Reproductor de música web que permite cargar cualquier tema descargado y ajustar su velocidad de reproducción o agregar un conteo de tiempos. Ideal para practicar y ensayar coreografías de baile.",
+    "description_en": "Web music player that lets you load any downloaded track and adjust its playback speed or add a beat count overlay. Perfect for practicing and rehearsing dance choreographies.",
+    "image": "assets/portafolio/reproductor.png",
+    "tags": ["Angular", "Ionic", "Web Audio API", "Capacitor"],
+    "link": "https://magic-reproductor.vercel.app/#/home",
+    "category": "pwa"
+  }
+]

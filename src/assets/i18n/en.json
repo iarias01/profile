@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Web & Mobile Developer",
+    "subtitle": "I transform ideas into high-impact digital experiences. Over 10 years building tailored solutions.",
+    "cta_contact": "Let's Talk",
+    "cta_portfolio": "View Portfolio"
+  },
+  "about": {
+    "section_label": "— About Me",
+    "section_title": "Who I Am",
+    "paragraph1": "I'm Ignacio Arias, a web and mobile developer with over 10 years of experience building tailored digital solutions. I specialize in creating modern, fast, and scalable applications.",
+    "paragraph2": "My passion is transforming complex ideas into elegant digital products that deliver real results. I work with an agile methodology, focused on detail and performance, always keeping the client at the center of the process.",
+    "stat1_value": "10+",
+    "stat1_label": "Years of experience",
+    "stat2_value": "50+",
+    "stat2_label": "Completed projects",
+    "stat3_value": "30+",
+    "stat3_label": "Satisfied clients"
+  },
+  "skills": {
+    "section_label": "— Technologies",
+    "section_title": "Tech Stack"
+  },
+  "services": {
+    "section_label": "— Services",
+    "section_title": "How can I help you?",
+    "web_title": "Web Development",
+    "web_desc": "Modern, fast and responsive web applications built with the latest market technologies.",
+    "mobile_title": "Mobile Apps",
+    "mobile_desc": "Native and hybrid applications for iOS and Android with smooth, high-performance user experience.",
+    "pwa_title": "Progressive Web Apps",
+    "pwa_desc": "PWAs combining the best of the web and native apps: speed, offline support, and easy distribution.",
+    "landing_title": "Landing Pages",
+    "landing_desc": "Conversion-optimized landing pages designed to attract clients and boost your brand.",
+    "consulting_title": "Technical Consulting",
+    "consulting_desc": "Software architecture advisory, code review, and technology strategy for your project.",
+    "backend_title": "API & Integrations",
+    "backend_desc": "REST API development, third-party service integrations, and scalable backend architectures."
+  },
+  "portfolio": {
+    "section_label": "— Portfolio",
+    "section_title": "Featured Projects",
+    "btn_view": "View project",
+    "filter_all": "All",
+    "filter_web": "Web",
+    "filter_mobile": "Mobile",
+    "filter_pwa": "PWA"
+  },
+  "contact": {
+    "section_label": "— Contact",
+    "section_title": "Have a project in mind?",
+    "subtitle": "Let's talk and make it happen. I reply to inquiries within 24 hours.",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "whatsapp_desc": "Message me directly on WhatsApp for a quick response.",
+    "linkedin_desc": "Connect with me on LinkedIn and explore opportunities together.",
+    "email_desc": "Send me an email and I'll get back to you shortly."
+  },
+  "footer": {
+    "copy": "© 2026 Ignacio Arias. All rights reserved.",
+    "made_with": "Made with"
+  }
+}

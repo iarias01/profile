@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "title": "Desarrollador Web & Mobile",
+    "subtitle": "Transformo ideas en experiencias digitales de alto impacto. Más de 10 años construyendo soluciones a medida.",
+    "cta_contact": "Hablemos",
+    "cta_portfolio": "Ver Portafolio"
+  },
+  "about": {
+    "section_label": "— Sobre Mí",
+    "section_title": "Quién Soy",
+    "paragraph1": "Soy Ignacio Arias, desarrollador web y mobile con más de 10 años de experiencia construyendo soluciones digitales a medida. Me especializo en crear aplicaciones modernas, rápidas y escalables.",
+    "paragraph2": "Mi pasión es transformar ideas complejas en productos digitales elegantes que generan resultados reales. Trabajo con una metodología ágil, orientada al detalle y al rendimiento, siempre poniendo al cliente en el centro del proceso.",
+    "stat1_value": "10+",
+    "stat1_label": "Años de experiencia",
+    "stat2_value": "20+",
+    "stat2_label": "Proyectos completados",
+    "stat3_value": "20+",
+    "stat3_label": "Clientes satisfechos"
+  },
+  "skills": {
+    "section_label": "— Tecnologías",
+    "section_title": "Stack Tecnológico"
+  },
+  "services": {
+    "section_label": "— Servicios",
+    "section_title": "¿En qué puedo ayudarte?",
+    "web_title": "Desarrollo Web",
+    "web_desc": "Aplicaciones web modernas, rápidas y responsivas construidas con las últimas tecnologías del mercado.",
+    "mobile_title": "Apps Móviles",
+    "mobile_desc": "Aplicaciones nativas e híbridas para iOS y Android con experiencias de usuario fluidas y de alto rendimiento.",
+    "pwa_title": "Progressive Web Apps",
+    "pwa_desc": "PWAs que combinan lo mejor de la web y las apps nativas: velocidad, soporte offline y distribución sencilla.",
+    "landing_title": "Landing Pages",
+    "landing_desc": "Páginas de aterrizaje optimizadas para conversión, diseñadas para captar clientes y potenciar tu marca.",
+    "consulting_title": "Consultoría Técnica",
+    "consulting_desc": "Asesoramiento en arquitectura de software, revisión de código y estrategia tecnológica para tu proyecto.",
+    "backend_title": "API & Integraciones",
+    "backend_desc": "Desarrollo de APIs REST, integración con servicios de terceros y arquitecturas backend escalables."
+  },
+  "portfolio": {
+    "section_label": "— Portafolio",
+    "section_title": "Proyectos Destacados",
+    "btn_view": "Ver proyecto",
+    "filter_all": "Todos",
+    "filter_web": "Web",
+    "filter_mobile": "Mobile",
+    "filter_pwa": "PWA"
+  },
+  "contact": {
+    "section_label": "— Contacto",
+    "section_title": "¿Tenés un proyecto en mente?",
+    "subtitle": "Hablemos y hagámoslo realidad. Respondo consultas en menos de 24 horas.",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "whatsapp_desc": "Escribime directo por WhatsApp para una respuesta rápida.",
+    "linkedin_desc": "Conectemos en LinkedIn y exploremos oportunidades juntos.",
+    "email_desc": "Enviame un correo y te respondo a la brevedad."
+  },
+  "footer": {
+    "copy": "© 2026 Ignacio Arias. Todos los derechos reservados.",
+    "made_with": "Hecho con"
+  }
+}
