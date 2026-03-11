@@ -8,6 +8,10 @@
     "start": "ionic serve --port 5001",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "icon": "git pull origin main && npx capacitor-assets generate && npm run push 'icons' push",
+    "push": "bash  gitpush.sh",
+    "clear": "rm -rf node_modules package-lock.json yarn.lock && npm cache clean --force",
+    "clearToVercel": "rm -rf package-lock.json yarn.lock && npm cache clean --force",
     "test": "ng test",
     "lint": "ng lint"
   },
