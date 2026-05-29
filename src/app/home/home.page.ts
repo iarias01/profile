@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  ViewChild,
+} from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
@@ -23,7 +29,7 @@ interface PortfolioProject {
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
-export class HomePage implements OnInit, OnDestroy {
+export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('content') ionContent!: IonContent;
 
   currentLang = 'es';
@@ -35,6 +41,7 @@ export class HomePage implements OnInit, OnDestroy {
   filteredProjects: PortfolioProject[] = [];
 
   private langSub!: Subscription;
+  private observer!: IntersectionObserver;
 
   skills = [
     { name: 'Angular', level: 95 },
@@ -70,8 +77,38 @@ export class HomePage implements OnInit, OnDestroy {
     this.loadPortfolio();
   }
 
+  ngAfterViewInit(): void {
+    setTimeout(() => this.observeRevealElements(), 100);
+  }
+
   ngOnDestroy(): void {
     this.langSub?.unsubscribe();
+    this.observer?.disconnect();
+  }
+
+  private observeRevealElements(): void {
+    if (!this.observer) {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              const animation = el.dataset['animate'] ?? 'fadeInUp';
+              const delay = el.dataset['delay'];
+              el.classList.add('animate__animated', `animate__${animation}`);
+              if (delay) {
+                el.style.animationDelay = `${delay}s`;
+              }
+              this.observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+    }
+    document
+      .querySelectorAll('.reveal:not(.animate__animated)')
+      .forEach((el) => this.observer.observe(el));
   }
 
   toggleLang(): void {
@@ -92,6 +129,7 @@ export class HomePage implements OnInit, OnDestroy {
       filter === 'all'
         ? [...this.projects]
         : this.projects.filter((p) => p.category === filter);
+    setTimeout(() => this.observeRevealElements(), 50);
   }
 
   getProjectTitle(project: PortfolioProject): string {
@@ -124,6 +162,7 @@ export class HomePage implements OnInit, OnDestroy {
         next: (data) => {
           this.projects = data;
           this.filteredProjects = [...data];
+          setTimeout(() => this.observeRevealElements(), 50);
         },
         error: () => {
           this.projects = [];
