@@ -1,18 +1,46 @@
 [
   {
     "id": 1,
+    "view": true,
     "slug": "beatflow",
     "title_es": "Beatflow",
     "title_en": "Beatflow",
     "description_es": "Aplicación multiplataforma para descubrir dónde bailar el ritmo que más te guste, desde salsa hasta electrónica. También permite encontrar academias y tomar clases. Disponible en App Store, Google Play y web.",
     "description_en": "Cross-platform app to discover where to dance your favorite music style, from salsa to electronic. Also helps find academies and take dance classes. Available on App Store, Google Play, and web.",
     "image": "assets/portafolio/beatflow.png",
-    "tags": ["Angular", "Ionic", "Capacitor", "NodeJS", "MongoDB"],
-    "link": "https://example.com/ecommerce",
+    "tags": ["Angular", "Ionic", "Capacitor", "PWA", "NodeJS", "MongoDB"],
+    "link": "https://beatflow-app.vercel.app/",
     "category": "mobile / web"
   },
   {
     "id": 2,
+    "view": true,
+    "slug": "gabysalsaclub",
+    "title_es": "Gaby Salsa Club",
+    "title_en": "Gaby Salsa Club",
+    "description_es": "Plataforma web para administrar un estudio de danza: gestión de clases, carta de menú, pagos y cobros en un solo lugar.",
+    "description_en": "Web platform to manage a dance studio: class management, menu handling, and payment/collection tracking in one place.",
+    "image": "assets/portafolio/gabysalsaclub.png",
+    "tags": ["Angular", "Ionic", "PWA", "PHP", "MySQL"],
+    "link": "https://www.gabysalsaclub.com/",
+    "category": "mobile / web"
+  },
+  {
+    "id": 3,
+    "view": true,
+    "slug": "barryvapers",
+    "title_es": "Barry Vapers",
+    "title_en": "Barry Vapers",
+    "description_es": "Tienda online de vapers y accesorios, con catálogo de productos y experiencia de compra web.",
+    "description_en": "Online vape store with product catalog and a web-based shopping experience.",
+    "image": "assets/portafolio/barryvapers.png",
+    "tags": ["Angular", "Ionic", "PWA", "PHP", "MySQL"],
+    "link": "https://www.barryvapers.com/",
+    "category": "mobile / web"
+  },
+  {
+    "id": 4,
+    "view": true,
     "slug": "sgi",
     "title_es": "SGI",
     "title_en": "SGI",
@@ -24,7 +52,8 @@
     "category": "web"
   },
   {
-    "id": 3,
+    "id": 5,
+    "view": false,
     "slug": "movinapp",
     "title_es": "MovInApp",
     "title_en": "MovInApp",
@@ -36,7 +65,8 @@
     "category": "mobile / web"
   },
   {
-    "id": 4,
+    "id": 6,
+    "view": true,
     "slug": "peluqueria",
     "title_es": "Peluquería",
     "title_en": "Hair Salon Scheduler",
@@ -48,7 +78,8 @@
     "category": "pwa"
   },
   {
-    "id": 5,
+    "id": 7,
+    "view": true,
     "slug": "lol-impostor",
     "title_es": "LoL Impostor",
     "title_en": "LoL Impostor",
@@ -56,11 +87,12 @@
     "description_en": "Multiplayer web game inspired by the classic 'Impostor' mechanics, featuring champions from the League of Legends universe. Find the impostor among the characters before it's too late.",
     "image": "assets/portafolio/impostor.png",
     "tags": ["Angular", "Ionic", "Capacitor", "PHP", "MySQL"],
-    "link": "https://example.com/fitness",
+    "link": "https://lol-impostor-ia.vercel.app/",
     "category": "pwa"
   },
   {
-    "id": 6,
+    "id": 8,
+    "view": false,
     "slug": "reproductor-avanzado",
     "title_es": "Reproductor Avanzado",
     "title_en": "Advanced Music Player",

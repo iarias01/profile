@@ -66,6 +66,41 @@ ion-content {
   margin-bottom: 52px;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0) scale(0.985);
+  filter: blur(2px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.75s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+
+  &.reveal-left {
+    transform: translate3d(-34px, 0, 0) scale(0.985);
+  }
+
+  &.reveal-right {
+    transform: translate3d(34px, 0, 0) scale(0.985);
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
 // ============================================================
 // Buttons
 // ============================================================

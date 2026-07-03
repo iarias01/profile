@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
@@ -6,6 +12,7 @@ import { TranslationService } from '../services/translation.service';
 
 interface PortfolioProject {
   id: number;
+  view?: boolean;
   slug: string;
   title_es: string;
   title_en: string;
@@ -13,7 +20,7 @@ interface PortfolioProject {
   description_en: string;
   image: string;
   tags: string[];
-  link: string;
+  link: string | null;
   category: string;
 }
 
@@ -23,7 +30,7 @@ interface PortfolioProject {
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
-export class HomePage implements OnInit, OnDestroy {
+export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('content') ionContent!: IonContent;
 
   currentLang = 'es';
@@ -35,6 +42,7 @@ export class HomePage implements OnInit, OnDestroy {
   filteredProjects: PortfolioProject[] = [];
 
   private langSub!: Subscription;
+  private scrollObserver?: IntersectionObserver;
 
   skills = [
     { name: 'Angular', level: 95 },
@@ -70,8 +78,13 @@ export class HomePage implements OnInit, OnDestroy {
     this.loadPortfolio();
   }
 
+  ngAfterViewInit(): void {
+    this.setupScrollAnimations();
+  }
+
   ngOnDestroy(): void {
     this.langSub?.unsubscribe();
+    this.scrollObserver?.disconnect();
   }
 
   toggleLang(): void {
@@ -92,6 +105,7 @@ export class HomePage implements OnInit, OnDestroy {
       filter === 'all'
         ? [...this.projects]
         : this.projects.filter((p) => p.category === filter);
+    this.queueObserveElements();
   }
 
   getProjectTitle(project: PortfolioProject): string {
@@ -122,13 +136,82 @@ export class HomePage implements OnInit, OnDestroy {
       .get<PortfolioProject[]>('assets/portafolio/portfolio.json')
       .subscribe({
         next: (data) => {
-          this.projects = data;
-          this.filteredProjects = [...data];
+          const visibleProjects = data.filter(
+            (project) => project.view !== false,
+          );
+          this.projects = visibleProjects;
+          this.filteredProjects = [...visibleProjects];
+          this.queueObserveElements();
         },
         error: () => {
           this.projects = [];
           this.filteredProjects = [];
         },
       });
+  }
+
+  private setupScrollAnimations(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    if (reducedMotion) {
+      this.markAllAsVisible();
+      return;
+    }
+
+    this.scrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            this.scrollObserver?.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    this.observeScrollElements();
+  }
+
+  private observeScrollElements(): void {
+    if (!this.scrollObserver) {
+      return;
+    }
+
+    const elements =
+      document.querySelectorAll<HTMLElement>('.reveal-on-scroll');
+
+    elements.forEach((el, index) => {
+      if (el.classList.contains('is-visible')) {
+        return;
+      }
+
+      const staggerDelay = (index % 6) * 65;
+      el.style.setProperty('--reveal-delay', `${staggerDelay}ms`);
+      this.scrollObserver?.observe(el);
+    });
+  }
+
+  private queueObserveElements(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.setTimeout(() => this.observeScrollElements(), 0);
+  }
+
+  private markAllAsVisible(): void {
+    const elements =
+      document.querySelectorAll<HTMLElement>('.reveal-on-scroll');
+    elements.forEach((el) => el.classList.add('is-visible'));
   }
 }
