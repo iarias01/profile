@@ -3,6 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'estudiogabysalsa',
+    loadChildren: () =>
+      import('./estudiogabysalsa/estudiogabysalsa.module').then(
+        (module) => module.EstudioGabySalsaPageModule,
+      ),
+  },
+  {
     path: 'gabyrestobar',
     loadChildren: () =>
       import('./gabyrestobar/gabyrestobar.module').then(

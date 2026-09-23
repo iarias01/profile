@@ -32,3 +32,21 @@ export interface ProposalSection {
   cards: ProposalCard[];
   columns?: 2 | 3;
 }
+
+export interface ProposalPageConfig {
+  browserTitle: string;
+  eyebrow: string;
+  title: string;
+  highlightedTitle: string;
+  lead: string;
+  heroImage: string;
+  progress: number;
+  progressDescription: string;
+  progressMeta: Array<{ icon: string; label: string }>;
+  summaryCards: ProposalCard[];
+  concepts: ProposalConcept[];
+  timelineConcepts: ProposalConcept[];
+  sections: ProposalSection[];
+  footerTitle: string;
+  footerDescription: string;
+}

@@ -36,8 +36,7 @@ button {
       rgba(30, 41, 59, 0.9) 58%,
       rgba(6, 78, 59, 0.72)
     ),
-    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
-      center / cover;
+    var(--proposal-image) center / cover;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   &::after {
