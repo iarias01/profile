@@ -1,0 +1,43 @@
+.payment-table-wrap {
+  overflow-x: auto;
+  background: rgba(17, 24, 39, 0.88);
+  border: 1px solid var(--gaby-border);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  color: var(--gaby-text);
+  font-size: 0.9rem;
+
+  th,
+  td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--gaby-border);
+    text-align: left;
+  }
+
+  th {
+    color: var(--gaby-muted);
+    background: rgba(2, 6, 23, 0.55);
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  td:nth-child(3),
+  td:nth-child(4) {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tbody tr:hover {
+    background: rgba(139, 92, 246, 0.08);
+  }
+}

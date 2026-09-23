@@ -1,0 +1,66 @@
+.proposal-card {
+  display: flex;
+  min-height: 100%;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  flex-direction: column;
+  gap: 1.35rem;
+  color: var(--gaby-text);
+  background: rgba(17, 24, 39, 0.86);
+  border: 1px solid var(--gaby-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    background: #172033;
+    border-color: rgba(167, 139, 250, 0.65);
+  }
+
+  &--compact {
+    min-height: 235px;
+  }
+
+  &__icon {
+    display: grid;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: 0 0 auto;
+    color: #fff;
+    background: linear-gradient(145deg, #7c3aed, #0ea5a4);
+    border-radius: 8px;
+    place-items: center;
+
+    ion-icon {
+      font-size: 1.65rem;
+    }
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0.7rem 0 0;
+    color: var(--gaby-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,20 @@
+<article class="proposal-card" [class.proposal-card--compact]="compact">
+  <div class="proposal-card__icon" aria-hidden="true">
+    <ion-icon [name]="card.icon"></ion-icon>
+  </div>
+  <div class="proposal-card__body">
+    <h3>{{ card.title }}</h3>
+    @if (card.description) {
+      <p>{{ card.description }}</p>
+    }
+  </div>
+  @if (card.badges?.length) {
+    <div class="proposal-card__badges">
+      @for (badge of card.badges; track badge.label) {
+        <app-status-badge [status]="badge.status">{{
+          badge.label
+        }}</app-status-badge>
+      }
+    </div>
+  }
+</article>

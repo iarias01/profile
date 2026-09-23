@@ -1,0 +1,70 @@
+.modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  padding: 1rem;
+  overflow-y: auto;
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(12px);
+  place-items: center;
+}
+
+.payment-modal {
+  width: min(1050px, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow: hidden;
+  color: var(--gaby-text);
+  background: #0f172a;
+  border: 1px solid var(--gaby-border);
+  border-radius: 8px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+
+  header {
+    display: flex;
+    padding: 1.25rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--gaby-border);
+  }
+
+  header p {
+    margin: 0 0 0.25rem;
+    color: var(--gaby-accent-soft);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  button {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    color: var(--gaby-text);
+    background: transparent;
+    border: 1px solid var(--gaby-border);
+    border-radius: 50%;
+    cursor: pointer;
+    place-items: center;
+  }
+
+  button:hover {
+    color: #fff;
+    border-color: var(--gaby-accent-soft);
+  }
+
+  &__body {
+    padding: 1.5rem;
+    overflow: auto;
+  }
+}

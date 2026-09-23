@@ -1,0 +1,28 @@
+<div class="payment-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Concepto</th>
+        <th>Estado</th>
+        <th>Importe</th>
+        <th>Pagado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (concept of concepts; track concept.id) {
+        <tr>
+          <td>
+            <strong>{{ conceptName(concept) }}</strong>
+          </td>
+          <td>
+            <app-status-badge [status]="concept.status">{{
+              statusLabel(concept)
+            }}</app-status-badge>
+          </td>
+          <td>{{ format(concept.amount, concept.currency) }}</td>
+          <td>{{ paidLabel(concept) }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

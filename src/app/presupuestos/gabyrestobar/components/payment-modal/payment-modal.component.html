@@ -1,0 +1,28 @@
+@if (open) {
+  <div class="modal-backdrop" role="presentation" (click)="closed.emit()">
+    <section
+      class="payment-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="payment-modal-title"
+      (click)="$event.stopPropagation()"
+    >
+      <header>
+        <div>
+          <p>Detalle comercial</p>
+          <h2 id="payment-modal-title">Resumen de pagos</h2>
+        </div>
+        <button
+          type="button"
+          aria-label="Cerrar resumen"
+          (click)="closed.emit()"
+        >
+          <ion-icon name="close" aria-hidden="true"></ion-icon>
+        </button>
+      </header>
+      <div class="payment-modal__body">
+        <app-payment-table [concepts]="concepts"></app-payment-table>
+      </div>
+    </section>
+  </div>
+}

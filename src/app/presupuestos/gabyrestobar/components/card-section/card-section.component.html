@@ -1,0 +1,13 @@
+<section class="content-section">
+  <div class="gaby-container">
+    <app-section-heading
+      [eyebrow]="section.eyebrow"
+      [title]="section.title"
+    ></app-section-heading>
+    <div class="card-grid" [class.card-grid--two]="section.columns === 2">
+      @for (card of section.cards; track card.title) {
+        <app-proposal-card [card]="card"></app-proposal-card>
+      }
+    </div>
+  </div>
+</section>

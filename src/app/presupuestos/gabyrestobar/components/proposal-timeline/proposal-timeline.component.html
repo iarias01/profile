@@ -1,0 +1,25 @@
+<div class="timeline">
+  @for (concept of concepts; track concept.id) {
+    <article class="timeline__item">
+      <span
+        class="timeline__dot"
+        [class]="'timeline__dot timeline__dot--' + concept.status"
+      ></span>
+      <div class="timeline__card">
+        <div>
+          <p class="timeline__step">
+            {{ concept.type === "stage" ? "Desarrollo" : "Infraestructura" }}
+          </p>
+          <h3>{{ label(concept) }}</h3>
+          <p class="timeline__description">{{ concept.description }}</p>
+        </div>
+        <div class="timeline__price">
+          <strong>{{ format(concept.amount, concept.currency) }}</strong>
+          <app-status-badge [status]="status(concept)">{{
+            statusLabel(concept)
+          }}</app-status-badge>
+        </div>
+      </div>
+    </article>
+  }
+</div>
