@@ -1,3 +1,22 @@
+:host {
+  display: block;
+
+  &.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 .payment-table-wrap {
   overflow-x: auto;
   background: rgba(17, 24, 39, 0.88);

@@ -4,6 +4,7 @@
 .reveal {
   opacity: 0;
 }
+
 .reveal.animate__animated {
   opacity: 1;
 }
@@ -384,12 +385,10 @@ ion-content {
   &__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(9, 9, 9, 0.72) 0%,
-      rgba(9, 9, 9, 0.82) 55%,
-      rgba(9, 9, 9, 1) 100%
-    );
+    background: linear-gradient(to bottom,
+        rgba(9, 9, 9, 0.72) 0%,
+        rgba(9, 9, 9, 0.82) 55%,
+        rgba(9, 9, 9, 1) 100%);
   }
 
   &__content {
@@ -636,8 +635,7 @@ ion-content {
 .skills {
   background: $bg-primary;
 
-  &__container {
-  }
+  &__container {}
 
   &__header {
     text-align: center;
@@ -654,8 +652,7 @@ ion-content {
     }
   }
 
-  &__item {
-  }
+  &__item {}
 
   &__item-header {
     display: flex;
@@ -698,8 +695,7 @@ ion-content {
 .services {
   background: $bg-secondary;
 
-  &__container {
-  }
+  &__container {}
 
   &__header {
     text-align: center;
@@ -713,6 +709,7 @@ ion-content {
     @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @media (max-width: 480px) {
       grid-template-columns: 1fr;
     }
@@ -788,8 +785,7 @@ ion-content {
 .portfolio {
   background: $bg-primary;
 
-  &__container {
-  }
+  &__container {}
 
   &__header {
     text-align: center;
@@ -833,6 +829,7 @@ ion-content {
     @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @media (max-width: 540px) {
       grid-template-columns: 1fr;
     }
@@ -853,6 +850,7 @@ ion-content {
       .portfolio__card-img {
         transform: scale(1.06);
       }
+
       .portfolio__card-hover {
         opacity: 1;
       }
@@ -943,8 +941,7 @@ ion-content {
 .contact {
   background: $bg-secondary;
 
-  &__container {
-  }
+  &__container {}
 
   &__header {
     text-align: center;
@@ -1009,18 +1006,23 @@ ion-content {
 
     &--wa {
       background: rgba(37, 211, 102, 0.13);
+
       ion-icon {
         color: #25d366;
       }
     }
+
     &--li {
       background: rgba(10, 102, 194, 0.15);
+
       ion-icon {
         color: #0a66c2;
       }
     }
+
     &--mail {
       background: rgba(33, 150, 243, 0.13);
+
       ion-icon {
         color: $blue-lighter;
       }
@@ -1076,6 +1078,7 @@ ion-content {
     cursor: pointer;
     margin-bottom: 4px;
     transition: $t;
+
     &:hover {
       color: #fff;
     }

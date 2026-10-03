@@ -8,14 +8,14 @@
     <div class="hero__glow hero__glow--two"></div>
     <div class="gaby-container hero__inner">
       <div class="hero__copy">
-        <p class="hero__eyebrow">{{ pageConfig.eyebrow }}</p>
-        <h1>
+        <p class="hero__eyebrow reveal">{{ pageConfig.eyebrow }}</p>
+        <h1 class="reveal delay-1">
           {{ pageConfig.title }}<br /><span>{{
             pageConfig.highlightedTitle
           }}</span>
         </h1>
-        <p class="hero__lead">{{ pageConfig.lead }}</p>
-        <div class="hero__actions">
+        <p class="hero__lead reveal delay-2">{{ pageConfig.lead }}</p>
+        <div class="hero__actions reveal delay-3">
           <button
             class="button button--primary"
             type="button"
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <aside class="progress-panel">
+      <aside class="progress-panel reveal delay-2">
         <div class="progress-panel__top">
           <span>Avance del proyecto</span>
           <strong>{{ pageConfig.progress }}%</strong>
@@ -65,8 +65,13 @@
   <main>
     <section class="summary-section" aria-label="Resumen de la propuesta">
       <div class="gaby-container summary-grid">
-        @for (card of pageConfig.summaryCards; track card.title) {
-          <app-proposal-card [card]="card" [compact]="true"></app-proposal-card>
+        @for (card of pageConfig.summaryCards; track card.title; let i = $index) {
+          <app-proposal-card
+            class="reveal"
+            [style.--reveal-delay]="(i * 0.08) + 's'"
+            [card]="card"
+            [compact]="true"
+          ></app-proposal-card>
         }
       </div>
     </section>
@@ -74,6 +79,7 @@
     <section class="timeline-section" id="etapas">
       <div class="gaby-container">
         <app-section-heading
+          class="reveal"
           eyebrow="Plan de trabajo"
           title="Etapas de desarrollo"
         ></app-section-heading>
@@ -89,7 +95,7 @@
 
     <section class="payments-section">
       <div class="gaby-container">
-        <div class="payments-section__heading">
+        <div class="payments-section__heading reveal">
           <app-section-heading
             eyebrow="Transparencia"
             title="Resumen de pagos"
@@ -103,13 +109,13 @@
             Ver ampliado
           </button>
         </div>
-        <app-payment-table [concepts]="pageConfig.concepts"></app-payment-table>
+        <app-payment-table class="reveal delay-1" [concepts]="pageConfig.concepts"></app-payment-table>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="gaby-container footer__inner">
+    <div class="gaby-container footer__inner reveal">
       <div>
         <strong>{{ pageConfig.footerTitle }}</strong
         ><span>{{ pageConfig.footerDescription }}</span>

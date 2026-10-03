@@ -17,6 +17,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'cursosonline',
+    loadChildren: () =>
+      import('./cursosonline/cursosonline.module').then(
+        (module) => module.CursosOnlinePageModule,
+      ),
+  },
+  {
     path: '',
     redirectTo: 'gabyrestobar',
     pathMatch: 'full',

@@ -1,6 +1,9 @@
 <div class="timeline">
-  @for (concept of concepts; track concept.id) {
-    <article class="timeline__item">
+  @for (concept of concepts; track concept.id; let i = $index) {
+    <article
+      class="timeline__item reveal"
+      [style.--reveal-delay]="(i % 3) * 0.08 + 's'"
+    >
       <span
         class="timeline__dot"
         [class]="'timeline__dot timeline__dot--' + concept.status"

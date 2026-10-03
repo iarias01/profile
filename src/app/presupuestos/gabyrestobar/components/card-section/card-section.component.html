@@ -1,12 +1,17 @@
 <section class="content-section">
   <div class="gaby-container">
     <app-section-heading
+      class="reveal"
       [eyebrow]="section.eyebrow"
       [title]="section.title"
     ></app-section-heading>
     <div class="card-grid" [class.card-grid--two]="section.columns === 2">
-      @for (card of section.cards; track card.title) {
-        <app-proposal-card [card]="card"></app-proposal-card>
+      @for (card of section.cards; track card.title; let i = $index) {
+        <app-proposal-card
+          class="reveal"
+          [style.--reveal-delay]="(i % 3) * 0.08 + 's'"
+          [card]="card"
+        ></app-proposal-card>
       }
     </div>
   </div>
