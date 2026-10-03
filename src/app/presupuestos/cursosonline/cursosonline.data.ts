@@ -85,6 +85,19 @@ const concepts: ProposalConcept[] = [
     optional: true,
   },
   {
+    id: 'opt-multilanguage',
+    type: 'stage',
+    number: 7,
+    title: 'Multi-lenguaje',
+    description:
+      'Soporte multi-idioma para la interfaz de la plataforma con selector de idioma (ej. español e inglés).',
+    amount: 30,
+    paid: 0,
+    currency: 'USD',
+    status: 'optional',
+    optional: true,
+  },
+  {
     id: 'domain',
     type: 'service',
     title: 'Dominio anual (.com / .com.ar)',
@@ -120,8 +133,8 @@ const summaryCards: ProposalCard[] = [
   {
     icon: 'rocket-outline',
     title: 'Módulos opcionales',
-    description: 'Progreso de cursos, Estadísticas y Carrito de compras',
-    badges: [{ label: 'USD 315 total (3 opcionales)', status: 'optional' }],
+    description: 'Progreso, Estadísticas, Carrito y Multi-lenguaje',
+    badges: [{ label: 'USD 345 total (4 opcionales)', status: 'optional' }],
   },
   {
     icon: 'globe-outline',
@@ -264,8 +277,8 @@ const sections: ProposalSection[] = [
   },
   {
     eyebrow: 'Funcionalidades adicionales',
-    title: 'Módulos opcionales bajo demanda (USD 315)',
-    columns: 3,
+    title: 'Módulos opcionales bajo demanda (USD 345)',
+    columns: 2,
     cards: [
       {
         icon: 'trending-up-outline',
@@ -287,6 +300,13 @@ const sections: ProposalSection[] = [
         description:
           'Selección de múltiples cursos simultáneos, vista de carrito con subtotal y compra combinada en un único pago por Mercado Pago.',
         badges: [{ label: 'USD 35', status: 'optional' }],
+      },
+      {
+        icon: 'language-outline',
+        title: 'Multi-lenguaje',
+        description:
+          'Soporte multi-idioma para la interfaz de la plataforma (ej. español e inglés) con selector dinámico para los usuarios.',
+        badges: [{ label: 'USD 30', status: 'optional' }],
       },
     ],
   },
