@@ -1,0 +1,72 @@
+[
+  {
+    "empresa": "Entrenamiento Personal",
+    "desde": "2020",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Presencial",
+    "puesto": "Entrenador Personal",
+    "referencia": "",
+    "industria": "Fitness y Salud",
+    "tareas": "Planificación de rutinas personalizadas según los objetivos, el nivel y la condición física de cada alumno, con seguimiento del progreso y acompañamiento constante. Recibido en IDA Internacional y en formación independiente continua desde hace más de 6 años.",
+    "tecnologias": "Planificación, Rutinas personalizadas, Seguimiento",
+    "color": "#047857",
+    "icono": "barbell-outline"
+  },
+  {
+    "empresa": "Salsa y Bachata",
+    "desde": "2011",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Presencial",
+    "puesto": "Profesor de Baile",
+    "referencia": "",
+    "industria": "Danza",
+    "tareas": "Dictado de clases grupales y particulares de salsa y bachata para todos los niveles, acompañando a cada alumno desde sus primeros pasos.",
+    "tecnologias": "Salsa, Bachata, Clases grupales, Clases particulares",
+    "color": "#b91c1c",
+    "icono": "musical-notes-outline"
+  },
+  {
+    "empresa": "Shows de Magia",
+    "desde": "2017",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Presencial",
+    "puesto": "Mago",
+    "referencia": "",
+    "industria": "Entretenimiento",
+    "tareas": "Shows de magia para eventos y celebraciones, con interacción con el público y adaptación del espectáculo a cada tipo de evento.",
+    "tecnologias": "Shows en vivo, Eventos",
+    "color": "#4338ca",
+    "icono": "color-wand-outline"
+  },
+  {
+    "empresa": "Coderhouse",
+    "desde": "01/2023",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Profesor",
+    "referencia": "",
+    "industria": "Educación",
+    "tareas": "Dictado de clases de programación.",
+    "tecnologias": "HTML5, CSS3, SCSS, JS, TS, Angular",
+    "color": "#1d4ed8",
+    "icono": "school-outline"
+  },
+  {
+    "empresa": "Clases Particulares",
+    "desde": "",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Presencial / Remoto",
+    "puesto": "Profesor de Programación y Matemáticas",
+    "referencia": "",
+    "industria": "Educación",
+    "tareas": "Clases particulares de programación y matemáticas adaptadas al ritmo y los objetivos de cada alumno.",
+    "tecnologias": "Matemáticas, Programación",
+    "color": "#b45309",
+    "icono": "calculator-outline"
+  }
+]

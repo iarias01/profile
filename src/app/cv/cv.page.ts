@@ -1,5 +1,12 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription, forkJoin, of, switchMap, tap } from 'rxjs';
 import { TranslationService } from '../services/translation.service';
 
@@ -22,7 +29,7 @@ interface CvTitles {
 
 interface CvNamedList {
   title: string;
-  data: { name: string }[];
+  data: { name: string; icon?: string }[];
 }
 
 interface CvSkill {
@@ -48,6 +55,8 @@ interface CvExperience {
   tareas: string;
   tecnologias: string;
   ia?: string;
+  color?: string;
+  icono?: string;
 }
 
 interface CvStudy {
@@ -56,6 +65,8 @@ interface CvStudy {
   desde: string;
   hasta: string;
   nivel: string;
+  color?: string;
+  icono?: string;
 }
 
 interface CvData {
@@ -63,7 +74,7 @@ interface CvData {
   skills: CvSkill[];
   personality: CvNamedList;
   languages: CvLanguage[];
-  trainings: CvNamedList;
+  trainings?: CvNamedList;
   activities: CvNamedList;
   experiences: CvExperience[];
   studies: CvStudy[];
@@ -78,20 +89,32 @@ interface CvData {
 export class CvPage implements OnInit, OnDestroy {
   currentLang = 'es';
   cv?: CvData;
+  // 'general': CV no relacionado al IT, solo en español
+  @HostBinding('class.is-general') readonly isGeneral: boolean;
   extrasOpen = false;
 
   readonly levels = [1, 2, 3, 4, 5];
 
-  private cache: { [lang: string]: CvData } = {};
+  private cache: { [folder: string]: CvData } = {};
   private langSub?: Subscription;
 
   constructor(
     private http: HttpClient,
     private translationService: TranslationService,
-  ) {}
+    route: ActivatedRoute,
+  ) {
+    this.isGeneral = route.snapshot.data['variant'] === 'general';
+  }
 
   ngOnInit(): void {
     document.body.classList.add('cv-print');
+
+    if (this.isGeneral) {
+      document.documentElement.lang = 'es';
+      this.langSub = this.loadCv('general').subscribe((cv) => (this.cv = cv));
+      return;
+    }
+
     this.langSub = this.translationService.currentLang$
       .pipe(
         tap((lang) => {
@@ -136,21 +159,25 @@ export class CvPage implements OnInit, OnDestroy {
       .filter((tech) => tech);
   }
 
-  private loadCv(lang: string): Observable<CvData> {
-    if (this.cache[lang]) {
-      return of(this.cache[lang]);
+  private loadCv(folder: string): Observable<CvData> {
+    if (this.cache[folder]) {
+      return of(this.cache[folder]);
     }
 
-    const base = `assets/cv/${lang}/`;
+    const base = `assets/cv/${folder}/`;
     return forkJoin({
       titles: this.http.get<CvTitles>(base + 'titulos.json'),
-      skills: this.http.get<CvSkill[]>(base + 'skill.json'),
+      skills: this.isGeneral
+        ? of<CvSkill[]>([])
+        : this.http.get<CvSkill[]>(base + 'skill.json'),
       personality: this.http.get<CvNamedList>(base + 'personalidad.json'),
       languages: this.http.get<CvLanguage[]>(base + 'idiomas.json'),
-      trainings: this.http.get<CvNamedList>(base + 'capacitaciones.json'),
+      trainings: this.isGeneral
+        ? of(undefined)
+        : this.http.get<CvNamedList>(base + 'capacitaciones.json'),
       activities: this.http.get<CvNamedList>(base + 'actividades.json'),
       experiences: this.http.get<CvExperience[]>(base + 'experiencias.json'),
       studies: this.http.get<CvStudy[]>(base + 'estudios.json'),
-    }).pipe(tap((cv) => (this.cache[lang] = cv)));
+    }).pipe(tap((cv) => (this.cache[folder] = cv)));
   }
 }

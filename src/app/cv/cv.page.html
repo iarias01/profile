@@ -5,7 +5,10 @@
       {{ cv.titles.volver }}
     </a>
     <div class="toolbar__actions">
-      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <div
+        class="lang-switch"
+        *ngIf="!isGeneral"
+        role="group" aria-label="Idioma / Language">
         <ion-icon
           class="lang-switch__icon"
           name="language-outline"
@@ -42,6 +45,7 @@
       </button>
       <a
         class="toolbar__btn toolbar__btn--icon toolbar__btn--primary"
+        *ngIf="!isGeneral"
         [href]="pdfUrl"
         target="_blank"
         rel="noopener noreferrer"
@@ -58,7 +62,7 @@
   <main class="cv" *ngIf="cv">
     <aside class="sidebar">
       <div class="profile">
-        <img src="assets/yo.PNG" class="profile__img" alt="Ignacio Arias" />
+        <img src="assets/yo-cv.png" class="profile__img" alt="Ignacio Arias" />
         <div class="profile__name">
           <h2>Ignacio Arias</h2>
           <span>{{ cv.titles.rol }}</span>
@@ -136,13 +140,25 @@
           {{ cv.titles.expe }}
         </h2>
         <div class="timeline">
-          <article class="job" *ngFor="let job of cv.experiences">
+          <article
+            class="job"
+            *ngFor="let job of cv.experiences"
+            [style.--accent]="job.color || null"
+          >
             <div class="job__head">
-              <div>
+              <ion-icon
+                class="job__icon"
+                *ngIf="job.icono"
+                [name]="job.icono"
+                aria-hidden="true"
+              ></ion-icon>
+              <div class="job__heading">
                 <h3 class="job__company">{{ job.empresa }}</h3>
                 <p class="job__role">{{ job.puesto }}</p>
               </div>
-              <span class="job__date">{{ job.desde }} – {{ job.hasta }}</span>
+              <span class="job__date"
+                >{{ job.desde ? job.desde + ' – ' : '' }}{{ job.hasta }}</span
+              >
             </div>
             <div class="job__meta">
               <span>
@@ -188,10 +204,20 @@
           {{ cv.titles.educ }}
         </h2>
         <div class="education">
-          <article class="study" *ngFor="let study of cv.studies">
+          <article
+            class="study"
+            *ngFor="let study of cv.studies"
+            [style.--accent]="study.color || null"
+          >
             <div class="study__head">
+              <ion-icon
+                class="study__icon"
+                *ngIf="study.icono"
+                [name]="study.icono"
+                aria-hidden="true"
+              ></ion-icon>
               <h3 class="study__title">{{ study.titulo }}</h3>
-              <span class="study__date"
+              <span class="study__date" *ngIf="study.desde || study.hasta"
                 >{{ study.desde }} – {{ study.hasta }}</span
               >
             </div>
@@ -252,7 +278,7 @@
 
 <ng-template #extras>
   <ng-container *ngIf="cv">
-    <section class="side-block">
+    <section class="side-block" *ngIf="cv.skills.length">
       <h4 class="side-block__title">{{ cv.titles.skills }}</h4>
       <div class="skills">
         <div class="skills__item" *ngFor="let skill of cv.skills">
@@ -303,7 +329,7 @@
       </div>
     </section>
 
-    <section class="side-block">
+    <section class="side-block" *ngIf="cv.trainings">
       <h4 class="side-block__title">{{ cv.trainings.title }}</h4>
       <ul class="check-list">
         <li class="check-list__item" *ngFor="let item of cv.trainings.data">
@@ -316,9 +342,15 @@
     <section class="side-block">
       <h4 class="side-block__title">{{ cv.activities.title }}</h4>
       <div class="chips">
-        <span class="chips__chip" *ngFor="let item of cv.activities.data">{{
-          item.name
-        }}</span>
+        <span class="chips__chip" *ngFor="let item of cv.activities.data">
+          <img
+            class="chips__img"
+            *ngIf="isGeneral && item.icon"
+            [src]="'assets/cv/actividades/' + item.icon"
+            alt=""
+          />
+          {{ item.name }}
+        </span>
       </div>
     </section>
   </ng-container>

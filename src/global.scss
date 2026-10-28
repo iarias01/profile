@@ -53,3 +53,11 @@
     background: #ffffff;
   }
 }
+
+/* Fotos de perfil: mejor nitidez al mostrarse más chicas que el original */
+.hero__photo,
+.about__img,
+.profile__img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}

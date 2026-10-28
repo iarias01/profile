@@ -6,7 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: CvPage,
-    title: 'Ignacio Arias | CV',
+    title: (route) =>
+      route.data['variant'] === 'general'
+        ? 'Ignacio Arias | CV General'
+        : 'Ignacio Arias | CV',
   },
 ];
 

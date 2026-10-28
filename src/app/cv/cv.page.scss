@@ -725,6 +725,143 @@ ul {
   }
 }
 
+// CV general (no IT): misma estructura, con color por experiencia.
+// Cada experiencia y estudio define su color en --accent desde el JSON.
+$g-side: #111827;
+$g-side-2: #1f2937;
+$g-teal: #0f766e;
+$g-teal-light: #5eead4;
+
+:host(.is-general) {
+  .cv {
+    box-shadow: 0 24px 60px -20px rgba(15, 23, 42, 0.6);
+  }
+
+  .sidebar,
+  .drawer {
+    background: linear-gradient(180deg, $g-side 0%, $g-side-2 100%);
+  }
+
+  .profile__img {
+    box-shadow: 0 0 0 3px $g-teal;
+  }
+
+  .profile__name span,
+  .side-block__title,
+  .check-list__icon,
+  .contact__icon {
+    color: $g-teal-light;
+  }
+
+  .dots__dot--on {
+    background: $g-teal-light;
+  }
+
+  .chips__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 3px;
+    border-color: rgba(94, 234, 212, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .chips__img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .extras-btn {
+    border-color: $g-teal-light;
+    background: rgba(15, 118, 110, 0.25);
+
+    ion-icon {
+      color: $g-teal-light;
+    }
+  }
+
+  .extras-fab {
+    background: $g-teal;
+    box-shadow: 0 10px 30px -6px rgba(15, 118, 110, 0.7);
+  }
+
+  .hero__title span {
+    color: $g-teal;
+  }
+
+  .section__icon {
+    background: $g-teal;
+    color: #ffffff;
+  }
+
+  .timeline {
+    padding-left: 52px;
+
+    &::before {
+      left: 17px;
+      background: $line;
+    }
+  }
+
+  .job {
+    --accent: #{$g-teal};
+
+    &::before {
+      display: none;
+    }
+
+    &__icon {
+      position: absolute;
+      left: -52px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      padding: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 0 0 4px $paper;
+    }
+
+    &__role {
+      color: var(--accent);
+    }
+
+    &__date {
+      background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+      color: var(--accent);
+    }
+  }
+
+  .tags__tag {
+    background: #f8fafc;
+    border-color: $line;
+    color: $ink-soft;
+  }
+
+  .study {
+    --accent: #{$g-teal};
+    border-top: 3px solid var(--accent);
+
+    &__icon {
+      align-self: flex-start;
+      width: 18px;
+      height: 18px;
+      margin-bottom: 4px;
+      padding: 8px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    &__date {
+      color: var(--accent);
+    }
+  }
+}
+
 // Tablet / mobile
 @media (max-width: 860px) {
   .cv-page {
