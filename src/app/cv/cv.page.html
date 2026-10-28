@@ -62,7 +62,11 @@
   <main class="cv" *ngIf="cv">
     <aside class="sidebar">
       <div class="profile">
-        <img src="assets/yo-cv.png" class="profile__img" alt="Ignacio Arias" />
+        <img
+          [src]="isGeneral ? 'assets/yo-cv_general.png' : 'assets/yo-cv.png'"
+          class="profile__img"
+          alt="Ignacio Arias"
+        />
         <div class="profile__name">
           <h2>Ignacio Arias</h2>
           <span>{{ cv.titles.rol }}</span>
