@@ -17,6 +17,7 @@ interface CvTitles {
   descargar: string;
   extras: string;
   cerrar: string;
+  ia: string;
 }
 
 interface CvNamedList {
@@ -46,6 +47,7 @@ interface CvExperience {
   industria: string;
   tareas: string;
   tecnologias: string;
+  ia?: string;
 }
 
 interface CvStudy {

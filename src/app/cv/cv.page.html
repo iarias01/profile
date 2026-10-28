@@ -159,10 +159,20 @@
               </span>
             </div>
             <p class="job__tasks">{{ job.tareas }}</p>
+            <div class="job__ai" *ngIf="job.ia">
+              <span class="job__ai-badge">
+                <ion-icon name="sparkles" aria-hidden="true"></ion-icon>
+                {{ cv.titles.ia }}
+              </span>
+              <p class="job__ai-text">{{ job.ia }}</p>
+            </div>
             <div class="tags" *ngIf="techTags(job).length">
-              <span class="tags__tag" *ngFor="let tech of techTags(job)">{{
-                tech
-              }}</span>
+              <span
+                class="tags__tag"
+                *ngFor="let tech of techTags(job)"
+                [class.tags__tag--ai]="tech === cv.titles.ia"
+                >{{ tech }}</span
+              >
             </div>
             <div class="job__ref" *ngIf="job.referencia">
               <ion-icon name="person-outline"></ion-icon>

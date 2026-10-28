@@ -57,6 +57,7 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
     { name: 'REST APIs', level: 85 },
     { name: 'Firebase', level: 78 },
     { name: 'PWA', level: 85 },
+    { name: 'AI Agent Orchestration', level: 85 },
   ];
 
   filters = [

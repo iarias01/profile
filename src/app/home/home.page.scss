@@ -554,6 +554,45 @@ ion-content {
     margin-bottom: 18px;
   }
 
+  &__ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 8px;
+    padding: 18px 20px;
+    border: 1px solid rgba(100, 181, 246, 0.3);
+    border-left: 4px solid $blue-light;
+    border-radius: $r;
+    background: linear-gradient(
+      135deg,
+      rgba(25, 118, 210, 0.16) 0%,
+      rgba(25, 118, 210, 0.04) 100%
+    );
+  }
+
+  &__ai-icon {
+    flex: 0 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(33, 150, 243, 0.18);
+    color: $blue-lighter;
+    font-size: 22px;
+  }
+
+  &__ai-title {
+    margin: 0 0 4px;
+    color: $text;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__ai-text {
+    margin: 0;
+    color: $text-muted;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
   &__stats {
     display: flex;
     gap: 36px;

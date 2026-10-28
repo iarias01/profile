@@ -9,7 +9,7 @@
     "referencia": "Ayelen de la Llera: +54 9 11 5585-5627 - Pablo Auruccio: +54 9 11 3216-0060",
     "industria": "Healthcare",
     "tareas": "End-to-end development of digital solutions for the healthcare sector. Design and build accessible, user-centered interfaces for members and healthcare professionals, develop services and APIs with PHP 8 and Laravel, administer web servers, and modernize existing applications following best practices for performance and sensitive data protection.",
-    "tecnologias": "Angular, PHP 8, Laravel, HTML5, CSS, SCSS, TS",
+    "tecnologias": "AI Agents, Angular, PHP 8, Laravel, HTML5, CSS, SCSS, TS",
     "labels": {
       "modalidad": "Modality",
       "industria": "Industry",
@@ -18,7 +18,8 @@
       "fecha": "Date",
       "puesto": "Position",
       "tareas": "Tasks"
-    }
+    },
+    "ia": "AI agent-assisted development: code, reviews and documentation."
   },
   {
     "empresa": "BBVA & Volkswagen",
@@ -30,7 +31,7 @@
     "referencia": "María José Balbi: +54 11 50973662 ",
     "industria": "Financial and Automotive Sectors",
     "tareas": "Frontend lead on large-scale projects for corporate clients. Defined architecture and development standards, built reusable components, and drove code reviews and quality assurance. Integration with Backend services and APIs, and Angular training for the team.",
-    "tecnologias": "Angular 15, HTML5, CSS, SCSS, JS, Angular Material, Jira",
+    "tecnologias": "AI Agents, Angular 15, HTML5, CSS, SCSS, JS, Angular Material, Jira",
     "labels": {
       "modalidad": "Modality",
       "industria": "Industry",
@@ -39,7 +40,8 @@
       "fecha": "Date",
       "puesto": "Position",
       "tareas": "Tasks"
-    }
+    },
+    "ia": "AI agents integrated into the team to speed up development and code review."
   },
   {
     "empresa": "Dicromo",

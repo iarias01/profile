@@ -27,7 +27,9 @@
     "stat2_label": "Proyectos completados",
     "stat3_value": "20+",
     "stat3_label": "Clientes satisfechos",
-    "cv_link": "Ver mi CV completo"
+    "cv_link": "Ver mi CV completo",
+    "ai_title": "Capacitado en orquestación de agentes de IA",
+    "ai_text": "Diseño y coordino flujos de trabajo con múltiples agentes de IA para acelerar el desarrollo, la revisión de código, las pruebas y la documentación, manteniendo siempre la calidad y la supervisión humana en cada entrega."
   },
   "skills": {
     "section_label": "— Tecnologías",

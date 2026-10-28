@@ -27,7 +27,9 @@
     "stat2_label": "Completed projects",
     "stat3_value": "30+",
     "stat3_label": "Satisfied clients",
-    "cv_link": "View my full resume"
+    "cv_link": "View my full resume",
+    "ai_title": "Trained in AI agent orchestration",
+    "ai_text": "I design and coordinate workflows with multiple AI agents to speed up development, code review, testing and documentation, always keeping quality and human oversight at the core of every delivery."
   },
   "skills": {
     "section_label": "— Technologies",

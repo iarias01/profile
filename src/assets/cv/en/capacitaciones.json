@@ -2,6 +2,15 @@
   "title": "Training",
   "data": [
     {
+      "name": "Generative AI"
+    },
+    {
+      "name": "AI Agents"
+    },
+    {
+      "name": "Prompt Engineering"
+    },
+    {
       "name": "Angular"
     },
     {
@@ -20,7 +29,7 @@
       "name": "GNU / Linux"
     },
     {
-      "name": "Netwokrs"
+      "name": "Networks"
     },
     {
       "name": "Assembly and repair"
