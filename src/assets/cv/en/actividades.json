@@ -1,0 +1,33 @@
+{
+  "title": "Activities",
+  "data": [
+    {
+      "name": "Personal Trainer",
+      "icon": "gym.jpg"
+    },
+    {
+      "name": "Dance Teacher",
+      "icon": "salsa.jpg"
+    },
+    {
+      "name": "Magician",
+      "icon": "magic.jpg"
+    },
+    {
+      "name": "Piano",
+      "icon": "piano.jpg"
+    },
+    {
+      "name": "Tennis",
+      "icon": "tennis.jpg"
+    },
+    {
+      "name": "Voley",
+      "icon": "voley.jpg"
+    },
+    {
+      "name": "Private Mathematics Classes",
+      "icon": "math.jpg"
+    }
+  ]
+}

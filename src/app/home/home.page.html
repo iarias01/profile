@@ -42,6 +42,9 @@
             >{{ 'nav.contact' | translate }}</a
           >
         </li>
+        <li>
+          <a class="navbar__link" routerLink="/cv">{{ 'nav.cv' | translate }}</a>
+        </li>
       </ul>
 
       <div class="navbar__actions">
@@ -97,6 +100,11 @@
       <li>
         <a class="mobile-menu__link" (click)="scrollTo('contact')"
           >{{ 'nav.contact' | translate }}</a
+        >
+      </li>
+      <li>
+        <a class="mobile-menu__link" routerLink="/cv" (click)="closeMenu()"
+          >{{ 'nav.cv' | translate }}</a
         >
       </li>
     </ul>

@@ -1,0 +1,29 @@
+{
+  "title": "Capacitaciones",
+  "data": [
+    {
+      "name": "Angular"
+    },
+    {
+      "name": "VueJS"
+    },
+    {
+      "name": "ReactJS"
+    },
+    {
+      "name": "IONIC"
+    },
+    {
+      "name": "Hacking Ético"
+    },
+    {
+      "name": "GNU / Linux"
+    },
+    {
+      "name": "Redes"
+    },
+    {
+      "name": "Armado y reparción"
+    }
+  ]
+}

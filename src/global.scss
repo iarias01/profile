@@ -35,3 +35,21 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Impresión del CV: Ionic fija el layout a la ventana, se libera para que el PDF tenga todas las páginas */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body.cv-print,
+  body.cv-print ion-app,
+  body.cv-print ion-router-outlet {
+    position: static;
+    overflow: visible;
+    height: auto;
+    contain: none;
+    background: #ffffff;
+  }
+}

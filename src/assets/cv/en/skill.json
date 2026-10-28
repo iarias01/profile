@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Angular",
+    "icon": "angular.png"
+  },
+  {
+    "name": "VueJS 3",
+    "icon": "vue.png"
+  },
+  {
+    "name": "ReactJS",
+    "icon": "react.png"
+  },
+  {
+    "name": "NGINX Server",
+    "icon": "nginx.png"
+  },
+  {
+    "name": "Apache Server",
+    "icon": "apache.png"
+  },
+  {
+    "name": "GNU/Linux",
+    "icon": "linux.png"
+  },
+  {
+    "name": "GNU Bash",
+    "icon": "bash.png"
+  },
+  {
+    "name": "FireBase",
+    "icon": "firebase.png"
+  },
+  {
+    "name": "IONIC",
+    "icon": "ionic.png"
+  },
+  {
+    "name": "PHP",
+    "icon": "php.png"
+  },
+  {
+    "name": "MySQL",
+    "icon": "mysql.png"
+  },
+  {
+    "name": "HTML5",
+    "icon": "html.png"
+  },
+  {
+    "name": "CSS3",
+    "icon": "css.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "js.png"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "typescript.png"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "bootstrap.png"
+  },
+  {
+    "name": "C#",
+    "icon": "csharp.png"
+  },
+  {
+    "name": "C",
+    "icon": "c.png"
+  },
+  {
+    "name": "GIMP",
+    "icon": "gimp.png"
+  },
+  {
+    "name": "After Effects",
+    "icon": "ae.png"
+  }
+]

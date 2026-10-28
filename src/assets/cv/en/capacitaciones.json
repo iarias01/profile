@@ -1,0 +1,29 @@
+{
+  "title": "Training",
+  "data": [
+    {
+      "name": "Angular"
+    },
+    {
+      "name": "VueJS"
+    },
+    {
+      "name": "ReactJS"
+    },
+    {
+      "name": "IONIC"
+    },
+    {
+      "name": "Ethical Hacking"
+    },
+    {
+      "name": "GNU / Linux"
+    },
+    {
+      "name": "Netwokrs"
+    },
+    {
+      "name": "Assembly and repair"
+    }
+  ]
+}

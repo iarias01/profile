@@ -1,0 +1,243 @@
+<div class="cv-page">
+  <nav class="toolbar" *ngIf="cv">
+    <a class="toolbar__btn" routerLink="/home">
+      <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      {{ cv.titles.volver }}
+    </a>
+    <div class="toolbar__actions">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <ion-icon
+          class="lang-switch__icon"
+          name="language-outline"
+          aria-hidden="true"
+        ></ion-icon>
+        <button
+          class="lang-switch__option"
+          type="button"
+          [class.lang-switch__option--active]="currentLang === 'es'"
+          [attr.aria-pressed]="currentLang === 'es'"
+          (click)="setLang('es')"
+        >
+          Español
+        </button>
+        <button
+          class="lang-switch__option"
+          type="button"
+          [class.lang-switch__option--active]="currentLang === 'en'"
+          [attr.aria-pressed]="currentLang === 'en'"
+          (click)="setLang('en')"
+        >
+          English
+        </button>
+      </div>
+      <button class="toolbar__btn" type="button" (click)="print()">
+        <ion-icon name="print-outline" aria-hidden="true"></ion-icon>
+        {{ cv.titles.imprimir }}
+      </button>
+      <a
+        class="toolbar__btn toolbar__btn--primary"
+        [href]="pdfUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
+        <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
+        {{ cv.titles.descargar }}
+      </a>
+    </div>
+  </nav>
+
+  <main class="cv" *ngIf="cv">
+    <aside class="sidebar">
+      <div class="profile">
+        <img
+          src="assets/yo.PNG"
+          class="profile__img"
+          alt="Foto de Ignacio Arias"
+        />
+        <div class="profile__name">
+          <h2>Ignacio Arias</h2>
+          <span>{{ cv.titles.rol }}</span>
+        </div>
+      </div>
+
+      <ul class="contact">
+        <li>
+          <ion-icon class="contact__icon" name="gift-outline"></ion-icon>
+          <span>36 {{ cv.titles.edad }}</span>
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="globe-outline"></ion-icon>
+          <span>Buenos Aires, Argentina</span>
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="location-outline"></ion-icon>
+          <span>José Mármol, GBA Sur</span>
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="call-outline"></ion-icon>
+          <a href="tel:+5491167997544">+54 9 11 67997544</a>
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="mail-outline"></ion-icon>
+          <a href="mailto:iariasdev1&#64;gmail.com">iariasdev1&#64;gmail.com</a>
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="logo-linkedin"></ion-icon>
+          <a
+            href="https://www.linkedin.com/in/iarias89/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >linkedin.com/in/iarias89</a
+          >
+        </li>
+        <li>
+          <ion-icon class="contact__icon" name="briefcase-outline"></ion-icon>
+          <a
+            href="https://iarias.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >iarias.vercel.app</a
+          >
+        </li>
+      </ul>
+
+      <section class="side-block">
+        <h4 class="side-block__title">{{ cv.titles.skills }}</h4>
+        <div class="skills">
+          <div class="skills__item" *ngFor="let skill of cv.skills">
+            <img
+              class="skills__icon"
+              [src]="'assets/cv/skills/' + skill.icon"
+              [alt]="'Logo de ' + skill.name"
+            />
+            <span class="skills__name">{{ skill.name }}</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-block">
+        <h4 class="side-block__title">{{ cv.personality.title }}</h4>
+        <ul class="check-list">
+          <li class="check-list__item" *ngFor="let item of cv.personality.data">
+            <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
+            {{ item.name }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-block">
+        <h4 class="side-block__title">{{ cv.titles.idiomas }}</h4>
+        <div class="language" *ngFor="let language of cv.languages">
+          <b class="language__name">{{ language.title }}</b>
+          <div class="language__row">
+            <span>{{ language.data.hablado }}</span>
+            <span class="dots">
+              <span
+                class="dots__dot"
+                *ngFor="let level of levels"
+                [class.dots__dot--on]="level <= language.niveles.hablado"
+              ></span>
+            </span>
+          </div>
+          <div class="language__row">
+            <span>{{ language.data.escrito }}</span>
+            <span class="dots">
+              <span
+                class="dots__dot"
+                *ngFor="let level of levels"
+                [class.dots__dot--on]="level <= language.niveles.escrito"
+              ></span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-block">
+        <h4 class="side-block__title">{{ cv.trainings.title }}</h4>
+        <ul class="check-list">
+          <li class="check-list__item" *ngFor="let item of cv.trainings.data">
+            <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
+            {{ item.name }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-block">
+        <h4 class="side-block__title">{{ cv.activities.title }}</h4>
+        <div class="chips">
+          <span class="chips__chip" *ngFor="let item of cv.activities.data">{{
+            item.name
+          }}</span>
+        </div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <header class="hero">
+        <h1 class="hero__title">Ignacio <span>Arias</span></h1>
+        <p class="hero__role">{{ cv.titles.rol }}</p>
+      </header>
+
+      <section class="section">
+        <h2 class="section__title">
+          <ion-icon class="section__icon" name="briefcase-outline"></ion-icon>
+          {{ cv.titles.expe }}
+        </h2>
+        <div class="timeline">
+          <article class="job" *ngFor="let job of cv.experiences">
+            <div class="job__head">
+              <div>
+                <h3 class="job__company">{{ job.empresa }}</h3>
+                <p class="job__role">{{ job.puesto }}</p>
+              </div>
+              <span class="job__date">{{ job.desde }} – {{ job.hasta }}</span>
+            </div>
+            <div class="job__meta">
+              <span>
+                <ion-icon name="location-outline"></ion-icon>
+                {{ job.ubicacion }}
+              </span>
+              <span>
+                <ion-icon name="laptop-outline"></ion-icon>
+                {{ job.modalidad_de_trabajo }}
+              </span>
+              <span>
+                <ion-icon name="business-outline"></ion-icon>
+                {{ job.industria }}
+              </span>
+            </div>
+            <p class="job__tasks">{{ job.tareas }}</p>
+            <div class="tags" *ngIf="techTags(job).length">
+              <span class="tags__tag" *ngFor="let tech of techTags(job)">{{
+                tech
+              }}</span>
+            </div>
+            <div class="job__ref" *ngIf="job.referencia">
+              <ion-icon name="person-outline"></ion-icon>
+              {{ cv.titles.referencias }}: {{ job.referencia }}
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <ion-icon class="section__icon" name="school-outline"></ion-icon>
+          {{ cv.titles.educ }}
+        </h2>
+        <div class="education">
+          <article class="study" *ngFor="let study of cv.studies">
+            <div class="study__head">
+              <h3 class="study__title">{{ study.titulo }}</h3>
+              <span class="study__date"
+                >{{ study.desde }} – {{ study.hasta }}</span
+              >
+            </div>
+            <p class="study__info">{{ study.institucion }} · {{ study.nivel }}</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>

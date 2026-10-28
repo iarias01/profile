@@ -15,6 +15,10 @@ const routes: Routes = [
       import('./clases/clases.module').then((m) => m.ClasesPageModule),
   },
   {
+    path: 'cv',
+    loadChildren: () => import('./cv/cv.module').then((m) => m.CvPageModule),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),

@@ -1,0 +1,54 @@
+[
+  {
+    "institucion": "U.T.N.",
+    "titulo": "Senior Programming Technician",
+    "desde": "02/2015",
+    "hasta": "02/2017",
+    "ubicacion": "GBA Sur, Avellaneda",
+    "nivel": "Tertiary",
+    "estado": "Incomplete",
+    "labels": {
+      "institucion": "Institution",
+      "nivel": "Level"
+    }
+  },
+  {
+    "institucion": "I.S.F.D. N° 41",
+    "titulo": "Mathematics Faculty",
+    "desde": "02/2011",
+    "hasta": "02/2015",
+    "ubicacion": "GBA Sur, Adrogué",
+    "nivel": "Terciario",
+    "estado": "Incomplete",
+    "labels": {
+      "institucion": "Institution",
+      "nivel": "Level"
+    }
+  },
+  {
+    "institucion": "U.T.N.",
+    "titulo": "Information Systems Engineering",
+    "desde": "02/2008",
+    "hasta": "02/2010",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "University",
+    "estado": "Incomplete",
+    "labels": {
+      "institucion": "Institution",
+      "nivel": "Level"
+    }
+  },
+  {
+    "institucion": "Colegio Modelo Mármol",
+    "titulo": "Bachelor in Natural Sciences",
+    "desde": "03/2005",
+    "hasta": "12/2007",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "Secondary",
+    "estado": "Complete",
+    "labels": {
+      "institucion": "Institution",
+      "nivel": "Level"
+    }
+  }
+]

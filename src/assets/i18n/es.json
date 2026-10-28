@@ -5,7 +5,8 @@
     "skills": "Habilidades",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "cv": "CV"
   },
   "hero": {
     "greeting": "Hola, soy",

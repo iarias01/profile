@@ -1,0 +1,54 @@
+[
+  {
+    "institucion": "U.T.N.",
+    "titulo": "Técnico Superior en Programación",
+    "desde": "02/2015",
+    "hasta": "02/2017",
+    "ubicacion": "GBA Sur, Avellaneda",
+    "nivel": "Terciario",
+    "estado": "Incompleto",
+    "labels": {
+      "institucion": "Institución",
+      "nivel": "Nivel"
+    }
+  },
+  {
+    "institucion": "I.S.F.D. N° 41",
+    "titulo": "Profesorado de Matemáticas",
+    "desde": "02/2011",
+    "hasta": "02/2015",
+    "ubicacion": "GBA Sur, Adrogué",
+    "nivel": "Terciario",
+    "estado": "Incompleto",
+    "labels": {
+      "institucion": "Institución",
+      "nivel": "Nivel"
+    }
+  },
+  {
+    "institucion": "U.T.N.",
+    "titulo": "Ingeniería en Sistemas de Información",
+    "desde": "02/2008",
+    "hasta": "02/2010",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "Universitario",
+    "estado": "Incompleto",
+    "labels": {
+      "institucion": "Institución",
+      "nivel": "Nivel"
+    }
+  },
+  {
+    "institucion": "Colegio Modelo Mármol",
+    "titulo": "Bachiller en Cs. Naturales",
+    "desde": "03/2005",
+    "hasta": "12/2007",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "Secundario",
+    "estado": "Completo",
+    "labels": {
+      "institucion": "Institución",
+      "nivel": "Nivel"
+    }
+  }
+]

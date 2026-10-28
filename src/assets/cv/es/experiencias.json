@@ -1,0 +1,233 @@
+[
+  {
+    "empresa": "SAMISALUD",
+    "desde": "10/2026",
+    "hasta": "Presente",
+    "ubicacion": "Argentina",
+    "modalidad_de_trabajo": "Remoto (Freelance)",
+    "puesto": "Desarrollador Senior Full-Stack (especialización Frontend)",
+    "referencia": "Ayelen de la Llera: +54 9 11 5585-5627 - Pablo Auruccio: +54 9 11 3216-0060",
+    "industria": "Salud",
+    "tareas": "Desarrollo de soluciones digitales para el sector salud, de punta a punta. Diseño y construcción de interfaces accesibles y centradas en el usuario para afiliados y profesionales, desarrollo de servicios y APIs con PHP 8 y Laravel, administración de servidores web, y modernización de aplicaciones existentes aplicando buenas prácticas de rendimiento y protección de datos sensibles.",
+    "tecnologias": "Angular, PHP 8, Laravel, HTML5, CSS, SCSS, TS",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "BBVA y Volkswagen",
+    "desde": "11/2024",
+    "hasta": "10/2026",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Desarrollador Senior Full-Stack (especialización Frontend)",
+    "referencia": "María José Balbi: +54 11 50973662 - Lionel Neimerman: +54 9 11 3465-7706",
+    "industria": "Sector Financiero y Automotriz",
+    "tareas": "Referente Frontend en proyectos de gran escala para clientes corporativos. Definición de arquitectura y estándares de desarrollo, creación de componentes reutilizables, revisión de código y aseguramiento de calidad. Integración con servicios Backend y APIs, y capacitación del equipo en Angular.",
+    "tecnologias": "Angular 15, HTML5, CSS, SCSS, JS, Angular Material, JQuery Bitbucket",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Dicromo",
+    "desde": "06/2024",
+    "hasta": "11/2024",
+    "ubicacion": "Madrid · España",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Desarrollador Senior Frontend",
+    "referencia": "",
+    "industria": "Soluciones Tecnológicas",
+    "tareas": "Desarrollar applicaciones mobiles con Vue3 + IONIC",
+    "tecnologias": "Vue3, IONIC, HTML5, SCSS, TS",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Coderhouse",
+    "desde": "01/2023",
+    "hasta": "Presente",
+    "ubicacion": "Buenos Aires, Capital Federal  · Argentina",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Profesor",
+    "referencia": "",
+    "industria": "Educación",
+    "tareas": "Dictado de clases de programación",
+    "tecnologias": "HTML5, CSS3, SCSS, JS, TS, Angular",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Tul",
+    "desde": "02/2022",
+    "hasta": "04/2024",
+    "ubicacion": "Bogotá · Colombia",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Desarrollador Semi Senior Frontend",
+    "referencia": "Miguel Sanabria: +57 301 4241378",
+    "industria": "Marketplace",
+    "tareas": "Desarrollar, mantener y reestructurar la web de la empresa.",
+    "tecnologias": "HTML5, BEM SCSS, JS, Angular 13, Jira, Bitbucket",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Clever FT",
+    "desde": "07/2023",
+    "hasta": "03/2024",
+    "ubicacion": "Madrid · España / Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Desarrollador Senior Frontend",
+    "referencia": "Iván Orgáz: +34 625 320018",
+    "industria": "Soluciones Tecnológicas",
+    "tareas": "Capacitar al equipo para el desarrollo con Angular",
+    "tecnologias": "Angular, HTML5, SCSS, TS",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Desarrollador Freelance",
+    "desde": "10/2020",
+    "hasta": "12/2023",
+    "ubicacion": "GBA Sur, josé Mármol · Argentina",
+    "modalidad_de_trabajo": "Remoto",
+    "puesto": "Desarrollador Full-Stack",
+    "referencia": "",
+    "industria": "RR.HH.",
+    "tareas": "Desarrollar y diseñar páginas web, sistemas de gestión y aplicaciones para celulares.",
+    "tecnologias": "Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Experta Seguros",
+    "desde": "12/2021",
+    "hasta": "02/2022",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Híbrido (remoto/on-site)",
+    "puesto": "Desarrollador Semi Senior Frontend",
+    "referencia": "",
+    "industria": "Insurance",
+    "tareas": "Desarrollar, mantener y reestructurar una plataforma para el sector de Legales.",
+    "tecnologias": "HTML5, CSS, SCSS, JS, Angular 8, Bootstrap 4, Jira, Openshift, Bitbucket",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Grupo Gestión",
+    "desde": "10/2015",
+    "hasta": "12/2021",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Híbrido (remoto/on-site)",
+    "puesto": "Desarrollador/Arquitecto Full-Stack Semi Senior",
+    "referencia": "Leandro Lossani: +54 9 11 6531-4412",
+    "industria": "RR.HH.",
+    "tareas": "Diagramar y desarrollar diversos sistemas webs y apps para celulares para el personal interno de la empresa. Administrar servidor web y base de datos.",
+    "tecnologias": "Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "Pentacom S.A.",
+    "desde": "12/2011",
+    "hasta": "10/2015",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "On-site",
+    "puesto": "Soporte Técnico",
+    "referencia": "Juan Sale: +54 9 11 3310-8703",
+    "industria": "Tecnología",
+    "tareas": "Soporte de hardware para el Poder Judicial de la Nación. Reparación de computadoras e impresoras.",
+    "tecnologias": "",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  },
+  {
+    "empresa": "CI-NET",
+    "desde": "07/2011",
+    "hasta": "11/2011",
+    "ubicacion": "GBA Sur, Lomas de Zamora · Argentina",
+    "modalidad_de_trabajo": "On-site",
+    "puesto": "Soporte Técnico",
+    "referencia": "Claudio Hernández: +54 9 11 6254-9250",
+    "industria": "Tecnología",
+    "tareas": "Instalación, configuración y mantenimiento de equipos informáticos. Asistencia técnica al personal del cliente de forma remota y on-site.",
+    "tecnologias": "",
+    "labels": {
+      "modalidad": "Modalidad",
+      "industria": "Industria",
+      "referencias": "Referencias",
+      "tecnologías": "Tecnologías",
+      "fecha": "Fecha",
+      "puesto": "Puesto",
+      "tareas": "Tareas"
+    }
+  }
+]

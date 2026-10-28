@@ -1,0 +1,212 @@
+[
+  {
+    "empresa": "SAMISALUD",
+    "desde": "10/2026",
+    "hasta": "Present",
+    "ubicacion": "Argentina",
+    "modalidad_de_trabajo": "Remote Freelance",
+    "puesto": "Senior Full-Stack Developer (Frontend specialization)",
+    "referencia": "Ayelen de la Llera: +54 9 11 5585-5627 - Pablo Auruccio: +54 9 11 3216-0060",
+    "industria": "Healthcare",
+    "tareas": "End-to-end development of digital solutions for the healthcare sector. Design and build accessible, user-centered interfaces for members and healthcare professionals, develop services and APIs with PHP 8 and Laravel, administer web servers, and modernize existing applications following best practices for performance and sensitive data protection.",
+    "tecnologias": "Angular, PHP 8, Laravel, HTML5, CSS, SCSS, TS",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "BBVA & Volkswagen",
+    "desde": "11/2024",
+    "hasta": "10/2026",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Remote Freelance",
+    "puesto": "Senior Full-Stack Developer (Frontend specialization)",
+    "referencia": "María José Balbi: +54 11 50973662 ",
+    "industria": "Financial and Automotive Sectors",
+    "tareas": "Frontend lead on large-scale projects for corporate clients. Defined architecture and development standards, built reusable components, and drove code reviews and quality assurance. Integration with Backend services and APIs, and Angular training for the team.",
+    "tecnologias": "Angular 15, HTML5, CSS, SCSS, JS, Angular Material, Jira",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Dicromo",
+    "desde": "06/2024",
+    "hasta": "11/2024",
+    "ubicacion": "Madrid · España",
+    "modalidad_de_trabajo": "Remote",
+    "puesto": "Senior Frontend Developer",
+    "referencia": "",
+    "industria": "Technological solutions",
+    "tareas": "Develop mobile applications with Vue3 + IONIC",
+    "tecnologias": "Vue3, IONIC, HTML5, SCSS, TS",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Tul",
+    "desde": "02/2022",
+    "hasta": "04/2024",
+    "ubicacion": "Bogotá · Colombia",
+    "modalidad_de_trabajo": "Remote",
+    "puesto": "Semi Senior Frontend Developer",
+    "referencia": "",
+    "industria": "Marketplace",
+    "tareas": "Develop, maintain and restructure the company's website.",
+    "tecnologias": "HTML5, BEM SCSS, JS, Angular 13, Jira, Bitbucket",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Clever FT",
+    "desde": "07/2023",
+    "hasta": "03/2024",
+    "ubicacion": "Madrid · Spain / Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Remote",
+    "puesto": "Senior Frontend Developer",
+    "referencia": "Iván Orgáz: +34 625 320018",
+    "industria": "Technological solutions",
+    "tareas": "Development and maintenance of applications. Train the team for development with Angular",
+    "tecnologias": "",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Tecnologías",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Freelance Developer",
+    "desde": "10/2020",
+    "hasta": "12/2023",
+    "ubicacion": "GBA Sur, josé Mármol · Argentina",
+    "modalidad_de_trabajo": "Remote",
+    "puesto": "Full-Stack Developer",
+    "referencia": "",
+    "industria": "Independent",
+    "tareas": "Develop and design web pages, management systems and mobile applications.",
+    "tecnologias": "Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Experta Seguros",
+    "desde": "12/2021",
+    "hasta": "02/2022",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Hybrid (remote/on-site)",
+    "puesto": "Semi Senior Frontend Developer",
+    "referencia": "",
+    "industria": "Insurance",
+    "tareas": "Develop, maintain and restructure a platform for the Legal sector.",
+    "tecnologias": "Angular 8, HTML5, CSS, SCSS, JS, Bootstrap 4, Jira, Openshift, Bitbucket",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Grupo Gestión",
+    "desde": "10/2015",
+    "hasta": "12/2021",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "Hybrid (remote/on-site)",
+    "puesto": "Full-Stack Developer/Architect Semi Senior",
+    "referencia": "Leandro Lossani: +54 9 11 6531-4412",
+    "industria": "Human Resources",
+    "tareas": "Design and develop various web systems and mobile apps for the company's internal staff. Administer web server and database. Currently I am developing a new system and moving the previous ones to Angular 11 keeping the backend with PHP 7.",
+    "tecnologias": "Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "Pentacom S.A.",
+    "desde": "12/2011",
+    "hasta": "10/2015",
+    "ubicacion": "Buenos Aires, Capital Federal · Argentina",
+    "modalidad_de_trabajo": "On-site",
+    "puesto": "Technical Support",
+    "referencia": "Juan Sale: +54 9 11 3310-8703",
+    "industria": "Technology",
+    "tareas": "Hardware support for the National Judiciary of Argentina. Computer and printer repair.",
+    "tecnologias": "",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  },
+  {
+    "empresa": "CI-NET",
+    "desde": "07/2011",
+    "hasta": "11/2011",
+    "ubicacion": "GBA Sur, Lomas de Zamora · Argentina",
+    "modalidad_de_trabajo": "On-site",
+    "puesto": "Technical Support",
+    "referencia": "Claudio Hernández: +54 9 11 6254-9250",
+    "industria": "Technology",
+    "tareas": "Installation, configuration and maintenance of computer equipment. Remote and on-site technical assistance for client staff.",
+    "tecnologias": "",
+    "labels": {
+      "modalidad": "Modality",
+      "industria": "Industry",
+      "referencias": "References",
+      "tecnologías": "Technologies",
+      "fecha": "Date",
+      "puesto": "Position",
+      "tareas": "Tasks"
+    }
+  }
+]
