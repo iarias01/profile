@@ -13,7 +13,8 @@
     "title": "Web & Mobile Developer",
     "subtitle": "I transform ideas into high-impact digital experiences. Over 10 years building tailored solutions.",
     "cta_contact": "Let's Talk",
-    "cta_portfolio": "View Portfolio"
+    "cta_portfolio": "View Portfolio",
+    "cta_cv": "View Resume"
   },
   "about": {
     "section_label": "— About Me",
@@ -25,7 +26,8 @@
     "stat2_value": "50+",
     "stat2_label": "Completed projects",
     "stat3_value": "30+",
-    "stat3_label": "Satisfied clients"
+    "stat3_label": "Satisfied clients",
+    "cv_link": "View my full resume"
   },
   "skills": {
     "section_label": "— Technologies",

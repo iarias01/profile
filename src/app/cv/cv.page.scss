@@ -19,7 +19,6 @@ $font-display: "Manrope", $font;
 
 :host {
   display: block;
-  overflow-y: auto;
   background: $bg;
   color: $ink;
   font-family: $font;
@@ -53,7 +52,10 @@ ul {
   list-style: none;
 }
 
+// El scroll vive acá para que el panel y el botón flotante queden fijos sobre el contenido
 .cv-page {
+  height: 100%;
+  overflow-y: auto;
   padding: 24px 16px 48px;
 }
 
@@ -220,6 +222,155 @@ ul {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.07);
     color: $blue-lighter;
+  }
+}
+
+.sidebar__extras {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+// Panel lateral de skills, idiomas y más (solo mobile)
+.extras-btn,
+.extras-fab,
+.drawer,
+.drawer-backdrop {
+  display: none;
+}
+
+.extras-btn {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid $blue-lighter;
+  border-radius: 14px;
+  background: rgba(25, 118, 210, 0.18);
+  color: #ffffff;
+  font: 700 15px $font;
+  cursor: pointer;
+
+  ion-icon {
+    color: $blue-lighter;
+    font-size: 20px;
+  }
+}
+
+.extras-fab {
+  position: absolute;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 20;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1565c0, $blue-light);
+  color: #ffffff;
+  font: 700 15px $font;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px -6px rgba(33, 150, 243, 0.7);
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+
+  ion-icon {
+    font-size: 20px;
+  }
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 20px);
+  }
+}
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+
+  &--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  width: min(360px, 88%);
+  flex-direction: column;
+  background: linear-gradient(180deg, $side-bg 0%, $side-bg-2 100%);
+  color: $side-ink;
+  box-shadow: -20px 0 50px -10px rgba(0, 0, 0, 0.6);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0.3s;
+
+  &--open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  &__close {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  &__body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px 20px calc(32px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .drawer-backdrop,
+  .extras-fab {
+    transition: none;
   }
 }
 
@@ -534,11 +685,27 @@ ul {
 // Tablet / mobile
 @media (max-width: 860px) {
   .cv-page {
-    padding: 16px 0 0;
+    // Espacio para que el botón flotante no tape el final del CV
+    padding: 16px 0 96px;
   }
 
   .toolbar {
     padding: 0 16px;
+  }
+
+  .sidebar__extras {
+    display: none;
+  }
+
+  .extras-btn,
+  .extras-fab,
+  .drawer,
+  .drawer-backdrop {
+    display: flex;
+  }
+
+  .drawer-backdrop {
+    display: block;
   }
 
   .cv {
@@ -585,11 +752,21 @@ ul {
   }
 
   .cv-page {
+    height: auto;
+    overflow: visible;
     padding: 0;
   }
 
-  .toolbar {
+  .toolbar,
+  .extras-btn,
+  .extras-fab,
+  .drawer,
+  .drawer-backdrop {
     display: none;
+  }
+
+  .sidebar__extras {
+    display: flex;
   }
 
   .cv {

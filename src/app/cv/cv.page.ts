@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription, forkJoin, of, switchMap, tap } from 'rxjs';
 import { TranslationService } from '../services/translation.service';
@@ -15,6 +15,8 @@ interface CvTitles {
   volver: string;
   imprimir: string;
   descargar: string;
+  extras: string;
+  cerrar: string;
 }
 
 interface CvNamedList {
@@ -74,6 +76,7 @@ interface CvData {
 export class CvPage implements OnInit, OnDestroy {
   currentLang = 'es';
   cv?: CvData;
+  extrasOpen = false;
 
   readonly levels = [1, 2, 3, 4, 5];
 
@@ -109,6 +112,15 @@ export class CvPage implements OnInit, OnDestroy {
 
   setLang(lang: 'es' | 'en'): void {
     this.translationService.setLang(lang);
+  }
+
+  openExtras(): void {
+    this.extrasOpen = true;
+  }
+
+  @HostListener('document:keydown.escape')
+  closeExtras(): void {
+    this.extrasOpen = false;
   }
 
   print(): void {

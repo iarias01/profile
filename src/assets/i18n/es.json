@@ -13,7 +13,8 @@
     "title": "Desarrollador Web & Mobile",
     "subtitle": "Transformo ideas en experiencias digitales de alto impacto. Más de 10 años construyendo soluciones a medida.",
     "cta_contact": "Hablemos",
-    "cta_portfolio": "Ver Portafolio"
+    "cta_portfolio": "Ver Portafolio",
+    "cta_cv": "Ver CV"
   },
   "about": {
     "section_label": "— Sobre Mí",
@@ -25,7 +26,8 @@
     "stat2_value": "20+",
     "stat2_label": "Proyectos completados",
     "stat3_value": "20+",
-    "stat3_label": "Clientes satisfechos"
+    "stat3_label": "Clientes satisfechos",
+    "cv_link": "Ver mi CV completo"
   },
   "skills": {
     "section_label": "— Tecnologías",

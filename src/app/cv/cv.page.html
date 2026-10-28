@@ -50,11 +50,7 @@
   <main class="cv" *ngIf="cv">
     <aside class="sidebar">
       <div class="profile">
-        <img
-          src="assets/yo.PNG"
-          class="profile__img"
-          alt="Foto de Ignacio Arias"
-        />
+        <img src="assets/yo.PNG" class="profile__img" alt="Ignacio Arias" />
         <div class="profile__name">
           <h2>Ignacio Arias</h2>
           <span>{{ cv.titles.rol }}</span>
@@ -102,75 +98,22 @@
         </li>
       </ul>
 
-      <section class="side-block">
-        <h4 class="side-block__title">{{ cv.titles.skills }}</h4>
-        <div class="skills">
-          <div class="skills__item" *ngFor="let skill of cv.skills">
-            <img
-              class="skills__icon"
-              [src]="'assets/cv/skills/' + skill.icon"
-              [alt]="'Logo de ' + skill.name"
-            />
-            <span class="skills__name">{{ skill.name }}</span>
-          </div>
-        </div>
-      </section>
+      <!-- Mobile: los bloques laterales se abren en un panel -->
+      <button
+        class="extras-btn"
+        type="button"
+        aria-controls="cv-extras"
+        [attr.aria-expanded]="extrasOpen"
+        (click)="openExtras()"
+      >
+        <ion-icon name="layers-outline" aria-hidden="true"></ion-icon>
+        {{ cv.titles.extras }}
+        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+      </button>
 
-      <section class="side-block">
-        <h4 class="side-block__title">{{ cv.personality.title }}</h4>
-        <ul class="check-list">
-          <li class="check-list__item" *ngFor="let item of cv.personality.data">
-            <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
-            {{ item.name }}
-          </li>
-        </ul>
-      </section>
-
-      <section class="side-block">
-        <h4 class="side-block__title">{{ cv.titles.idiomas }}</h4>
-        <div class="language" *ngFor="let language of cv.languages">
-          <b class="language__name">{{ language.title }}</b>
-          <div class="language__row">
-            <span>{{ language.data.hablado }}</span>
-            <span class="dots">
-              <span
-                class="dots__dot"
-                *ngFor="let level of levels"
-                [class.dots__dot--on]="level <= language.niveles.hablado"
-              ></span>
-            </span>
-          </div>
-          <div class="language__row">
-            <span>{{ language.data.escrito }}</span>
-            <span class="dots">
-              <span
-                class="dots__dot"
-                *ngFor="let level of levels"
-                [class.dots__dot--on]="level <= language.niveles.escrito"
-              ></span>
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section class="side-block">
-        <h4 class="side-block__title">{{ cv.trainings.title }}</h4>
-        <ul class="check-list">
-          <li class="check-list__item" *ngFor="let item of cv.trainings.data">
-            <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
-            {{ item.name }}
-          </li>
-        </ul>
-      </section>
-
-      <section class="side-block">
-        <h4 class="side-block__title">{{ cv.activities.title }}</h4>
-        <div class="chips">
-          <span class="chips__chip" *ngFor="let item of cv.activities.data">{{
-            item.name
-          }}</span>
-        </div>
-      </section>
+      <div class="sidebar__extras">
+        <ng-container *ngTemplateOutlet="extras"></ng-container>
+      </div>
     </aside>
 
     <section class="content">
@@ -241,3 +184,124 @@
     </section>
   </main>
 </div>
+
+<ng-container *ngIf="cv">
+  <!-- Botón flotante (solo mobile) -->
+  <button
+    class="extras-fab"
+    type="button"
+    aria-controls="cv-extras"
+    [attr.aria-expanded]="extrasOpen"
+    [class.extras-fab--hidden]="extrasOpen"
+    (click)="openExtras()"
+  >
+    <ion-icon name="layers-outline" aria-hidden="true"></ion-icon>
+    {{ cv.titles.extras }}
+  </button>
+
+  <div
+    class="drawer-backdrop"
+    [class.drawer-backdrop--open]="extrasOpen"
+    (click)="closeExtras()"
+  ></div>
+
+  <aside
+    id="cv-extras"
+    class="drawer"
+    [class.drawer--open]="extrasOpen"
+    [attr.aria-hidden]="!extrasOpen"
+    [attr.inert]="extrasOpen ? null : ''"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="cv.titles.extras"
+  >
+    <header class="drawer__head">
+      <h3 class="drawer__title">{{ cv.titles.extras }}</h3>
+      <button
+        class="drawer__close"
+        type="button"
+        [attr.aria-label]="cv.titles.cerrar"
+        (click)="closeExtras()"
+      >
+        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </header>
+    <div class="drawer__body">
+      <ng-container *ngTemplateOutlet="extras"></ng-container>
+    </div>
+  </aside>
+</ng-container>
+
+<ng-template #extras>
+  <ng-container *ngIf="cv">
+    <section class="side-block">
+      <h4 class="side-block__title">{{ cv.titles.skills }}</h4>
+      <div class="skills">
+        <div class="skills__item" *ngFor="let skill of cv.skills">
+          <img
+            class="skills__icon"
+            [src]="'assets/cv/skills/' + skill.icon"
+            [alt]="'Logo de ' + skill.name"
+          />
+          <span class="skills__name">{{ skill.name }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="side-block">
+      <h4 class="side-block__title">{{ cv.personality.title }}</h4>
+      <ul class="check-list">
+        <li class="check-list__item" *ngFor="let item of cv.personality.data">
+          <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
+          {{ item.name }}
+        </li>
+      </ul>
+    </section>
+
+    <section class="side-block">
+      <h4 class="side-block__title">{{ cv.titles.idiomas }}</h4>
+      <div class="language" *ngFor="let language of cv.languages">
+        <b class="language__name">{{ language.title }}</b>
+        <div class="language__row">
+          <span>{{ language.data.hablado }}</span>
+          <span class="dots">
+            <span
+              class="dots__dot"
+              *ngFor="let level of levels"
+              [class.dots__dot--on]="level <= language.niveles.hablado"
+            ></span>
+          </span>
+        </div>
+        <div class="language__row">
+          <span>{{ language.data.escrito }}</span>
+          <span class="dots">
+            <span
+              class="dots__dot"
+              *ngFor="let level of levels"
+              [class.dots__dot--on]="level <= language.niveles.escrito"
+            ></span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="side-block">
+      <h4 class="side-block__title">{{ cv.trainings.title }}</h4>
+      <ul class="check-list">
+        <li class="check-list__item" *ngFor="let item of cv.trainings.data">
+          <ion-icon class="check-list__icon" name="checkmark"></ion-icon>
+          {{ item.name }}
+        </li>
+      </ul>
+    </section>
+
+    <section class="side-block">
+      <h4 class="side-block__title">{{ cv.activities.title }}</h4>
+      <div class="chips">
+        <span class="chips__chip" *ngFor="let item of cv.activities.data">{{
+          item.name
+        }}</span>
+      </div>
+    </section>
+  </ng-container>
+</ng-template>
