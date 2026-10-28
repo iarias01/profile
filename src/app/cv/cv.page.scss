@@ -689,8 +689,42 @@ ul {
     padding: 16px 0 96px;
   }
 
+  // Fila 1: Volver + íconos de imprimir/descargar. Fila 2: selector de idioma
   .toolbar {
     padding: 0 16px;
+    gap: 12px 10px;
+
+    &__actions {
+      display: contents;
+    }
+
+    > .toolbar__btn:first-child {
+      margin-right: auto;
+    }
+
+    &__btn--icon {
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+
+      ion-icon {
+        font-size: 24px;
+      }
+    }
+
+    &__label {
+      display: none;
+    }
+  }
+
+  .lang-switch {
+    order: 3;
+    width: 100%;
+
+    &__option {
+      flex: 1;
+    }
   }
 
   .sidebar__extras {

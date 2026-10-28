@@ -30,19 +30,27 @@
           English
         </button>
       </div>
-      <button class="toolbar__btn" type="button" (click)="print()">
+      <button
+        class="toolbar__btn toolbar__btn--icon"
+        type="button"
+        [attr.aria-label]="cv.titles.imprimir"
+        [title]="cv.titles.imprimir"
+        (click)="print()"
+      >
         <ion-icon name="print-outline" aria-hidden="true"></ion-icon>
-        {{ cv.titles.imprimir }}
+        <span class="toolbar__label">{{ cv.titles.imprimir }}</span>
       </button>
       <a
-        class="toolbar__btn toolbar__btn--primary"
+        class="toolbar__btn toolbar__btn--icon toolbar__btn--primary"
         [href]="pdfUrl"
         target="_blank"
         rel="noopener noreferrer"
         download
+        [attr.aria-label]="cv.titles.descargar"
+        [title]="cv.titles.descargar"
       >
         <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
-        {{ cv.titles.descargar }}
+        <span class="toolbar__label">{{ cv.titles.descargar }}</span>
       </a>
     </div>
   </nav>
