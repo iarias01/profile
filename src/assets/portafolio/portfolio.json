@@ -13,17 +13,17 @@
     "category": "mobile / web"
   },
   {
-    "id": 2,
+    "id": 9,
     "view": true,
-    "slug": "gabysalsaclub",
-    "title_es": "Gaby Salsa Club",
-    "title_en": "Gaby Salsa Club",
-    "description_es": "Plataforma web para administrar un estudio de danza: gestión de clases, carta de menú, pagos y cobros en un solo lugar.",
-    "description_en": "Web platform to manage a dance studio: class management, menu handling, and payment/collection tracking in one place.",
-    "image": "assets/portafolio/gabysalsaclub.png",
-    "tags": ["Angular", "Ionic", "PWA", "PHP", "MySQL"],
-    "link": "https://www.gabysalsaclub.com/",
-    "category": "mobile / web"
+    "slug": "carpinteria",
+    "title_es": "Muebles Bernardo",
+    "title_en": "Muebles Bernardo",
+    "description_es": "Sitio web para una carpintería de muebles a medida en Buenos Aires. Muestra trabajos de cocinas, placares, camas y livings diseñados en 3D antes de fabricarse, y permite pedir presupuesto directo por WhatsApp.",
+    "description_en": "Website for a custom furniture workshop in Buenos Aires. Showcases kitchens, wardrobes, beds and living rooms designed in 3D before being built, with direct quote requests via WhatsApp.",
+    "image": "assets/portafolio/carpinteria.png",
+    "tags": ["Angular", "SEO", "Responsive"],
+    "link": "https://muebles-bernardo.vercel.app/",
+    "category": "web"
   },
   {
     "id": 3,
@@ -36,6 +36,19 @@
     "image": "assets/portafolio/barryvapers.png",
     "tags": ["Angular", "Ionic", "PWA", "PHP", "MySQL"],
     "link": "https://www.barryvapers.com/",
+    "category": "mobile / web"
+  },
+  {
+    "id": 2,
+    "view": true,
+    "slug": "gabysalsaclub",
+    "title_es": "Gaby Salsa Club",
+    "title_en": "Gaby Salsa Club",
+    "description_es": "Plataforma web para administrar un estudio de danza: gestión de clases, carta de menú, pagos y cobros en un solo lugar.",
+    "description_en": "Web platform to manage a dance studio: class management, menu handling, and payment/collection tracking in one place.",
+    "image": "assets/portafolio/gabysalsaclub.png",
+    "tags": ["Angular", "Ionic", "PWA", "PHP", "MySQL"],
+    "link": "https://www.gabysalsaclub.com/",
     "category": "mobile / web"
   },
   {
@@ -79,7 +92,7 @@
   },
   {
     "id": 7,
-    "view": true,
+    "view": false,
     "slug": "lol-impostor",
     "title_es": "LoL Impostor",
     "title_en": "LoL Impostor",
