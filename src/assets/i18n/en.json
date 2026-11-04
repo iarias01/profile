@@ -6,7 +6,9 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "cv": "Resume"
+    "cv": "Resume",
+    "cv_it": "IT Resume",
+    "cv_general": "General Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -58,7 +60,11 @@
     "filter_all": "All",
     "filter_web": "Web",
     "filter_mobile": "Mobile",
-    "filter_pwa": "PWA"
+    "filter_pwa": "PWA",
+    "btn_all": "View all projects",
+    "modal_title": "All projects",
+    "close": "Close",
+    "empty": "No projects in this category."
   },
   "contact": {
     "section_label": "— Contact",

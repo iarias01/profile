@@ -2,8 +2,10 @@ import {
   AfterViewInit,
   Component,
   OnDestroy,
+  HostListener,
   OnInit,
   ViewChild,
+  ElementRef,
 } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
@@ -32,17 +34,30 @@ interface PortfolioProject {
 })
 export class HomePage implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('content') ionContent!: IonContent;
+  @ViewChild('featuredTrack') featuredTrack?: ElementRef<HTMLElement>;
 
   currentLang = 'es';
   menuOpen = false;
+  cvMenuOpen = false;
   activeFilter = 'all';
   navScrolled = false;
 
-  projects: PortfolioProject[] = [];
+  /** Proyectos destacados (view: true), sin filtros. */
+  featuredProjects: PortfolioProject[] = [];
+  /** Todos los proyectos, se muestran en el modal con filtros. */
+  allProjects: PortfolioProject[] = [];
   filteredProjects: PortfolioProject[] = [];
+  allProjectsOpen = false;
 
   private langSub!: Subscription;
   private scrollObserver?: IntersectionObserver;
+
+  // Slider de destacados: avanza solo mientras el usuario no interactúa
+  private readonly sliderIntervalMs = 4500;
+  private readonly sliderIdleMs = 6000;
+  private sliderTimer?: ReturnType<typeof setInterval>;
+  private sliderResumeTimer?: ReturnType<typeof setTimeout>;
+  private sliderPaused = false;
 
   skills = [
     { name: 'Angular', level: 95 },
@@ -81,11 +96,76 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.setupScrollAnimations();
+    this.startSlider();
   }
 
   ngOnDestroy(): void {
     this.langSub?.unsubscribe();
     this.scrollObserver?.disconnect();
+    this.stopSlider();
+  }
+
+  /** Avanza (dir=1) o retrocede (dir=-1) una tarjeta; vuelve al inicio/fin en los extremos. */
+  slide(dir: 1 | -1, byUser = false): void {
+    const track = this.featuredTrack?.nativeElement;
+    const card = track?.querySelector<HTMLElement>('.portfolio__slide');
+    if (!track || !card) {
+      return;
+    }
+    if (byUser) {
+      this.onSliderInteract();
+    }
+
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const step = card.offsetWidth + gap;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const atEnd = track.scrollLeft >= maxScroll - 4;
+    const atStart = track.scrollLeft <= 4;
+
+    let target = track.scrollLeft + dir * step;
+    if (dir === 1 && atEnd) {
+      target = 0;
+    } else if (dir === -1 && atStart) {
+      target = maxScroll;
+    }
+    track.scrollTo({ left: target, behavior: 'smooth' });
+  }
+
+  pauseSlider(): void {
+    this.sliderPaused = true;
+    clearTimeout(this.sliderResumeTimer);
+  }
+
+  resumeSlider(): void {
+    clearTimeout(this.sliderResumeTimer);
+    this.sliderResumeTimer = setTimeout(() => {
+      this.sliderPaused = false;
+    }, this.sliderIdleMs);
+  }
+
+  /** Interacción puntual (click en flechas, scroll con rueda): pausa y reanuda tras un rato quieto. */
+  onSliderInteract(): void {
+    this.pauseSlider();
+    this.resumeSlider();
+  }
+
+  private startSlider(): void {
+    if (
+      typeof window === 'undefined' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+    this.sliderTimer = setInterval(() => {
+      if (!this.sliderPaused && !document.hidden && !this.allProjectsOpen) {
+        this.slide(1);
+      }
+    }, this.sliderIntervalMs);
+  }
+
+  private stopSlider(): void {
+    clearInterval(this.sliderTimer);
+    clearTimeout(this.sliderResumeTimer);
   }
 
   toggleLang(): void {
@@ -102,11 +182,32 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
 
   setFilter(filter: string): void {
     this.activeFilter = filter;
+    // category puede ser compuesta, ej: "mobile / web"
     this.filteredProjects =
       filter === 'all'
-        ? [...this.projects]
-        : this.projects.filter((p) => p.category === filter);
-    this.queueObserveElements();
+        ? [...this.allProjects]
+        : this.allProjects.filter((p) =>
+            p.category
+              .split('/')
+              .map((c) => c.trim().toLowerCase())
+              .includes(filter),
+          );
+  }
+
+  openAllProjects(): void {
+    this.setFilter('all');
+    this.allProjectsOpen = true;
+  }
+
+  closeAllProjects(): void {
+    this.allProjectsOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.allProjectsOpen) {
+      this.closeAllProjects();
+    }
   }
 
   getProjectTitle(project: PortfolioProject): string {
@@ -137,15 +238,16 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
       .get<PortfolioProject[]>('assets/portafolio/portfolio.json')
       .subscribe({
         next: (data) => {
-          const visibleProjects = data.filter(
+          this.allProjects = data;
+          this.featuredProjects = data.filter(
             (project) => project.view !== false,
           );
-          this.projects = visibleProjects;
-          this.filteredProjects = [...visibleProjects];
+          this.filteredProjects = [...data];
           this.queueObserveElements();
         },
         error: () => {
-          this.projects = [];
+          this.allProjects = [];
+          this.featuredProjects = [];
           this.filteredProjects = [];
         },
       });

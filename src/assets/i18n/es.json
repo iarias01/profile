@@ -6,7 +6,9 @@
     "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto",
-    "cv": "CV"
+    "cv": "CV",
+    "cv_it": "CV IT",
+    "cv_general": "CV General"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -58,7 +60,11 @@
     "filter_all": "Todos",
     "filter_web": "Web",
     "filter_mobile": "Mobile",
-    "filter_pwa": "PWA"
+    "filter_pwa": "PWA",
+    "btn_all": "Ver todos los proyectos",
+    "modal_title": "Todos los proyectos",
+    "close": "Cerrar",
+    "empty": "No hay proyectos en esta categoría."
   },
   "contact": {
     "section_label": "— Contacto",

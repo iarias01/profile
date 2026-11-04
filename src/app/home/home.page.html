@@ -42,10 +42,43 @@
             >{{ 'nav.contact' | translate }}</a
           >
         </li>
-        <li>
-          <a class="navbar__link" routerLink="/cv"
-            >{{ 'nav.cv' | translate }}</a
+        <li
+          class="navbar__dropdown"
+          [class.navbar__dropdown--open]="cvMenuOpen"
+          (mouseenter)="cvMenuOpen = true"
+          (mouseleave)="cvMenuOpen = false"
+        >
+          <button
+            class="navbar__link navbar__dropdown-toggle"
+            (click)="cvMenuOpen = !cvMenuOpen"
+            aria-haspopup="true"
+            [attr.aria-expanded]="cvMenuOpen"
           >
+            {{ 'nav.cv' | translate }}
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <ul class="navbar__dropdown-menu">
+            <li>
+              <a
+                class="navbar__dropdown-item"
+                routerLink="/cv"
+                (click)="cvMenuOpen = false"
+              >
+                <ion-icon name="code-slash-outline"></ion-icon>
+                {{ 'nav.cv_it' | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                class="navbar__dropdown-item"
+                routerLink="/cv-general"
+                (click)="cvMenuOpen = false"
+              >
+                <ion-icon name="briefcase-outline"></ion-icon>
+                {{ 'nav.cv_general' | translate }}
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
 
@@ -106,7 +139,15 @@
       </li>
       <li>
         <a class="mobile-menu__link" routerLink="/cv" (click)="closeMenu()"
-          >{{ 'nav.cv' | translate }}</a
+          >{{ 'nav.cv_it' | translate }}</a
+        >
+      </li>
+      <li>
+        <a
+          class="mobile-menu__link"
+          routerLink="/cv-general"
+          (click)="closeMenu()"
+          >{{ 'nav.cv_general' | translate }}</a
         >
       </li>
     </ul>
@@ -399,53 +440,52 @@
         <h2 class="title">{{ 'portfolio.section_title' | translate }}</h2>
       </div>
 
-      <div class="portfolio__filters reveal-on-scroll">
+      <div
+        class="portfolio__slider reveal-on-scroll"
+        (pointerenter)="pauseSlider()"
+        (pointerleave)="resumeSlider()"
+        (focusin)="pauseSlider()"
+        (focusout)="resumeSlider()"
+      >
         <button
-          *ngFor="let f of filters"
-          class="portfolio__filter-btn"
-          [class.portfolio__filter-btn--active]="activeFilter === f.key"
-          (click)="setFilter(f.key)"
+          class="portfolio__slider-nav portfolio__slider-nav--prev"
+          (click)="slide(-1, true)"
+          aria-label="Anterior"
         >
-          {{ f.labelKey | translate }}
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+
+        <div
+          class="portfolio__track"
+          #featuredTrack
+          (touchstart)="pauseSlider()"
+          (touchend)="resumeSlider()"
+          (wheel)="onSliderInteract()"
+        >
+          <div
+            class="portfolio__card portfolio__slide"
+            *ngFor="let project of featuredProjects"
+          >
+            <ng-container
+              *ngTemplateOutlet="projectCard; context: { $implicit: project }"
+            ></ng-container>
+          </div>
+        </div>
+
+        <button
+          class="portfolio__slider-nav portfolio__slider-nav--next"
+          (click)="slide(1, true)"
+          aria-label="Siguiente"
+        >
+          <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
       </div>
 
-      <div class="portfolio__grid">
-        <div
-          class="portfolio__card reveal-on-scroll"
-          *ngFor="let project of filteredProjects"
-        >
-          <div class="portfolio__card-thumb">
-            <div
-              class="portfolio__card-img"
-              [style.background-image]="'url(' + project.image + ')'"
-            ></div>
-            <div class="portfolio__card-hover">
-              <a
-                *ngIf="project.link"
-                class="btn btn--primary btn--sm"
-                [href]="project.link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{ 'portfolio.btn_view' | translate }}
-                <ion-icon name="open-outline"></ion-icon>
-              </a>
-            </div>
-          </div>
-          <div class="portfolio__card-body">
-            <span class="portfolio__card-cat">{{ project.category }}</span>
-            <h3 class="portfolio__card-title">
-              {{ getProjectTitle(project) }}
-            </h3>
-            <p class="portfolio__card-desc">{{ getProjectDesc(project) }}</p>
-            <div class="portfolio__card-tags">
-              <span class="portfolio__tag" *ngFor="let tag of project.tags"
-                >{{ tag }}</span
-              >
-            </div>
-          </div>
-        </div>
+      <div class="portfolio__more reveal-on-scroll" *ngIf="allProjects.length">
+        <button class="btn btn--outline" (click)="openAllProjects()">
+          {{ 'portfolio.btn_all' | translate }} ({{ allProjects.length }})
+          <ion-icon name="grid-outline"></ion-icon>
+        </button>
       </div>
     </div>
   </section>
@@ -529,4 +569,91 @@
       </p>
     </div>
   </footer>
+  <!-- ================================================================
+       MODAL: TODOS LOS PROYECTOS
+  ================================================================ -->
+  <div
+    class="projects-modal"
+    slot="fixed"
+    *ngIf="allProjectsOpen"
+    (click)="closeAllProjects()"
+  >
+    <div
+      class="projects-modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="projects-modal-title"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="projects-modal__header">
+        <h2 class="projects-modal__title" id="projects-modal-title">
+          {{ 'portfolio.modal_title' | translate }}
+        </h2>
+        <button
+          class="projects-modal__close"
+          (click)="closeAllProjects()"
+          [attr.aria-label]="'portfolio.close' | translate"
+        >
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="portfolio__filters projects-modal__filters">
+        <button
+          *ngFor="let f of filters"
+          class="portfolio__filter-btn"
+          [class.portfolio__filter-btn--active]="activeFilter === f.key"
+          (click)="setFilter(f.key)"
+        >
+          {{ f.labelKey | translate }}
+        </button>
+      </div>
+
+      <div class="projects-modal__body">
+        <div class="portfolio__grid">
+          <div class="portfolio__card" *ngFor="let project of filteredProjects">
+            <ng-container
+              *ngTemplateOutlet="projectCard; context: { $implicit: project }"
+            ></ng-container>
+          </div>
+        </div>
+        <p class="projects-modal__empty" *ngIf="!filteredProjects.length">
+          {{ 'portfolio.empty' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #projectCard let-project>
+    <div class="portfolio__card-thumb">
+      <div
+        class="portfolio__card-img"
+        [style.background-image]="'url(' + project.image + ')'"
+      ></div>
+      <div class="portfolio__card-hover">
+        <a
+          *ngIf="project.link"
+          class="btn btn--primary btn--sm"
+          [href]="project.link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ 'portfolio.btn_view' | translate }}
+          <ion-icon name="open-outline"></ion-icon>
+        </a>
+      </div>
+    </div>
+    <div class="portfolio__card-body">
+      <span class="portfolio__card-cat">{{ project.category }}</span>
+      <h3 class="portfolio__card-title">
+        {{ getProjectTitle(project) }}
+      </h3>
+      <p class="portfolio__card-desc">{{ getProjectDesc(project) }}</p>
+      <div class="portfolio__card-tags">
+        <span class="portfolio__tag" *ngFor="let tag of project.tags"
+          >{{ tag }}</span
+        >
+      </div>
+    </div>
+  </ng-template>
 </ion-content>
