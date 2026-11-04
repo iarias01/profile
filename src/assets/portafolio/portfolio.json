@@ -8,8 +8,14 @@
     "description_es": "Plataforma de conexión empresa para BBVA y Volkswagen (sector financiero y automotriz). Referente Frontend: arquitectura, estándares de desarrollo, componentes reutilizables, code review e integración con servicios Backend y APIs, con agentes de IA integrados al equipo.",
     "description_en": "Business connection platform for BBVA and Volkswagen (financial and automotive sectors). Frontend lead: architecture, development standards, reusable components, code review and Backend/API integration, with AI agents integrated into the team workflow.",
     "image": "assets/portafolio/vw.png",
-    "tags": ["Angular 15", "Angular Material", "SCSS", "Agentes de IA", "Bitbucket"],
-    "link": "https://test1-qa.bbva.com.ar/vw/conexionEmpresa.do",
+    "tags": [
+      "Angular 15",
+      "Angular Material",
+      "SCSS",
+      "Agentes de IA",
+      "Bitbucket"
+    ],
+    "link": "https://clientes.vwfs.com.ar/clientesvwfs/login.html",
     "category": "web"
   },
   {
