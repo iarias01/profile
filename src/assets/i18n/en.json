@@ -8,7 +8,8 @@
     "contact": "Contact",
     "cv": "Resume",
     "cv_it": "IT Resume",
-    "cv_general": "General Resume"
+    "cv_general": "General Resume",
+    "cv_escolar": "Teaching Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",

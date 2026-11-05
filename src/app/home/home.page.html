@@ -78,6 +78,16 @@
                 {{ 'nav.cv_general' | translate }}
               </a>
             </li>
+            <li>
+              <a
+                class="navbar__dropdown-item"
+                routerLink="/cv-escolar"
+                (click)="cvMenuOpen = false"
+              >
+                <ion-icon name="school-outline"></ion-icon>
+                {{ 'nav.cv_escolar' | translate }}
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -148,6 +158,14 @@
           routerLink="/cv-general"
           (click)="closeMenu()"
           >{{ 'nav.cv_general' | translate }}</a
+        >
+      </li>
+      <li>
+        <a
+          class="mobile-menu__link"
+          routerLink="/cv-escolar"
+          (click)="closeMenu()"
+          >{{ 'nav.cv_escolar' | translate }}</a
         >
       </li>
     </ul>

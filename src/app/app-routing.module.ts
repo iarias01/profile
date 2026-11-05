@@ -24,7 +24,6 @@ const routes: Routes = [
     data: { variant: 'general' },
   },
   {
-    // Oculto: no se enlaza desde el home, solo se comparte la URL
     path: 'cv-escolar',
     loadChildren: () => import('./cv/cv.module').then((m) => m.CvPageModule),
     data: { variant: 'escolar' },
