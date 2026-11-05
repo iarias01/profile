@@ -89,8 +89,10 @@ interface CvData {
 export class CvPage implements OnInit, OnDestroy {
   currentLang = 'es';
   cv?: CvData;
-  // 'general': CV no relacionado al IT, solo en español
+  // 'general' y 'escolar': CVs no relacionados al IT, solo en español.
+  // Comparten estilos; cada uno lee los datos de su propia carpeta.
   @HostBinding('class.is-general') readonly isGeneral: boolean;
+  private readonly folder: string;
   extrasOpen = false;
 
   readonly levels = [1, 2, 3, 4, 5];
@@ -103,7 +105,9 @@ export class CvPage implements OnInit, OnDestroy {
     private translationService: TranslationService,
     route: ActivatedRoute,
   ) {
-    this.isGeneral = route.snapshot.data['variant'] === 'general';
+    const variant = route.snapshot.data['variant'];
+    this.isGeneral = variant === 'general' || variant === 'escolar';
+    this.folder = this.isGeneral ? variant : '';
   }
 
   ngOnInit(): void {
@@ -111,7 +115,7 @@ export class CvPage implements OnInit, OnDestroy {
 
     if (this.isGeneral) {
       document.documentElement.lang = 'es';
-      this.langSub = this.loadCv('general').subscribe((cv) => (this.cv = cv));
+      this.langSub = this.loadCv(this.folder).subscribe((cv) => (this.cv = cv));
       return;
     }
 
@@ -132,7 +136,8 @@ export class CvPage implements OnInit, OnDestroy {
   }
 
   get pdfUrl(): string {
-    return `assets/cv/pdf/cv-ignacio-arias-${this.currentLang}.pdf`;
+    const suffix = this.isGeneral ? this.folder : this.currentLang;
+    return `assets/cv/pdf/cv-ignacio-arias-${suffix}.pdf`;
   }
 
   setLang(lang: 'es' | 'en'): void {

@@ -983,11 +983,18 @@ $g-teal-light: #5eead4;
     display: flex;
   }
 
-  .cv {
+  .cv,
+  :host(.is-general) .cv {
     max-width: none;
     border-radius: 0;
     box-shadow: none;
     grid-template-columns: 250px minmax(0, 1fr);
+  }
+
+  // Que un título de sección no quede solo al pie de una página
+  .section__title {
+    break-after: avoid;
+    break-inside: avoid;
   }
 
   .profile__name {

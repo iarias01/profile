@@ -1,0 +1,80 @@
+IGNACIO ARIAS  - CV Web: https://iarias.vercel.app/cv
+Desarrollador Senior Full-Stack  ·  Especialización Frontend (Angular)
+José Mármol, Buenos Aires, Argentina   |   +54 9 11 6799-7544   |   iariasdev1@gmail.com
+LinkedIn: linkedin.com/in/iarias89   |   Portfolio: https://iarias.vercel.app
+PERFIL PROFESIONAL
+Desarrollador Full-Stack con más de 10 años de experiencia en desarrollo web y mobile, especializado en Frontend con Angular, TypeScript y SCSS. Referente técnico en proyectos corporativos de gran escala para los sectores financiero, automotriz y salud: definición de arquitectura y estándares, componentes reutilizables, code review e integración con APIs. Backend con PHP 8, Laravel y MySQL, y administración de servidores GNU/Linux. Trabajo diario con agentes de IA para acelerar el desarrollo, la revisión de código y la documentación. Docente de programación en Coderhouse.
+HABILIDADES TÉCNICAS
+Frontend: Angular (8 a 15+), TypeScript, JavaScript, HTML5, CSS3, SCSS (BEM), Angular Material, Bootstrap, jQuery, Vue 3, React, Ionic
+Backend y datos: PHP 8, Laravel, APIs, MySQL, Firebase
+Infraestructura: GNU/Linux, Bash, NGINX, Apache, OpenShift
+Herramientas: Git, Bitbucket, Jira
+Inteligencia Artificial: Agentes de IA, IA generativa, Prompt Engineering
+Otros: C#, C, GIMP, After Effects
+EXPERIENCIA LABORAL
+Desarrollador Senior Full-Stack (especialización Frontend)	10/2026 – Presente
+SAMISALUD  |  Argentina  |  Remoto (Freelance)  |  Salud
+•Desarrollo de soluciones digitales para el sector salud, de punta a punta.
+•Diseño y construcción de interfaces accesibles y centradas en el usuario para afiliados y profesionales, desarrollo de servicios y APIs con PHP 8 y Laravel, administración de servidores web, y modernización de aplicaciones existentes aplicando buenas prácticas de rendimiento y protección de datos sensibles.
+•Desarrollo asistido por agentes de IA: código, revisiones y documentación.
+Tecnologías: Agentes de IA, Angular, PHP 8, Laravel, HTML5, CSS, SCSS, TS
+Desarrollador Senior Full-Stack (especialización Frontend)	11/2024 – 10/2026
+BBVA y Volkswagen  |  Buenos Aires, Capital Federal · Argentina  |  Remoto  |  Sector Financiero y Automotriz
+•Referente Frontend en proyectos de gran escala para clientes corporativos.
+•Definición de arquitectura y estándares de desarrollo, creación de componentes reutilizables, revisión de código y aseguramiento de calidad.
+•Integración con servicios Backend y APIs, y capacitación del equipo en Angular.
+•Agentes de IA integrados al equipo para acelerar desarrollo y code review.
+Tecnologías: Agentes de IA, Angular 15, HTML5, CSS, SCSS, JS, Angular Material, JQuery, Bitbucket
+Desarrollador Senior Frontend	06/2024 – 11/2024
+Dicromo  |  Madrid · España  |  Remoto  |  Soluciones Tecnológicas
+•Desarrollo de aplicaciones móviles híbridas con Vue 3 + Ionic.
+Tecnologías: Vue3, IONIC, HTML5, SCSS, TS
+Desarrollador Senior Frontend	07/2023 – 03/2024
+Clever FT  |  Madrid · España / Buenos Aires · Argentina  |  Remoto  |  Soluciones Tecnológicas
+•Capacitar al equipo para el desarrollo con Angular.
+Tecnologías: Angular, HTML5, SCSS, TS
+Profesor	01/2023 – Presente
+Coderhouse  |  Buenos Aires, Capital Federal · Argentina  |  Remoto  |  Educación
+•Dictado de clases de programación.
+Tecnologías: HTML5, CSS3, SCSS, JS, TS, Angular
+Desarrollador Semi Senior Frontend	02/2022 – 04/2024
+Tul  |  Bogotá · Colombia  |  Remoto  |  Marketplace
+•Desarrollar, mantener y reestructurar la web de la empresa.
+Tecnologías: HTML5, BEM SCSS, JS, Angular 13, Jira, Bitbucket
+Desarrollador Semi Senior Frontend	12/2021 – 02/2022
+Experta Seguros  |  Buenos Aires, Capital Federal · Argentina  |  Híbrido (remoto/on-site)  |  Insurance
+•Desarrollar, mantener y reestructurar una plataforma para el sector de Legales.
+Tecnologías: HTML5, CSS, SCSS, JS, Angular 8, Bootstrap 4, Jira, Openshift, Bitbucket
+Desarrollador Full-Stack	10/2020 – 12/2023
+Desarrollador Freelance  |  GBA Sur, José Mármol · Argentina  |  Remoto  |  RR.HH.
+•Desarrollar y diseñar páginas web, sistemas de gestión y aplicaciones para celulares.
+Tecnologías: Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap
+Desarrollador/Arquitecto Full-Stack Semi Senior	10/2015 – 12/2021
+Grupo Gestión  |  Buenos Aires, Capital Federal · Argentina  |  Híbrido (remoto/on-site)  |  RR.HH.
+•Diagramar y desarrollar diversos sistemas webs y apps para celulares para el personal interno de la empresa.
+•Administrar servidor web y base de datos.
+Tecnologías: Angular, IONIC, Firebase, MySql, PHP 7.x, Angular Material, HTML5, SCSS, JS, jQuery, Bootstrap
+Soporte Técnico	12/2011 – 10/2015
+Pentacom S.A.  |  Buenos Aires, Capital Federal · Argentina  |  On-site  |  Tecnología
+•Soporte de hardware para el Poder Judicial de la Nación.
+•Reparación de computadoras e impresoras.
+Soporte Técnico	07/2011 – 11/2011
+CI-NET  |  GBA Sur, Lomas de Zamora · Argentina  |  On-site  |  Tecnología
+•Instalación, configuración y mantenimiento de equipos informáticos.
+•Asistencia técnica al personal del cliente de forma remota y on-site.
+EDUCACIÓN
+Técnico Superior en Programación	2015 – 2017
+U.T.N.  |  Terciario (incompleto)  |  GBA Sur, Avellaneda
+Profesorado de Matemáticas	2011 – 2015
+I.S.F.D. N° 41  |  Terciario (incompleto)  |  GBA Sur, Adrogué
+Ingeniería en Sistemas de Información	2008 – 2010
+U.T.N.  |  Universitario (incompleto)  |  Buenos Aires, Capital Federal
+Bachiller en Cs. Naturales	2005 – 2007
+Colegio Modelo Mármol  |  Secundario (completo)  |  Buenos Aires, Capital Federal
+CAPACITACIONES
+Inteligencia Artificial Generativa, Agentes de IA, Prompt Engineering, Angular, VueJS, ReactJS, IONIC, Hacking Ético, GNU / Linux, Redes, Armado y reparación de PC.
+IDIOMAS
+Español: nativo     Inglés: intermedio escrito, básico oral
+COMPETENCIAS
+Autodidacta, Dedicado, Sociable, Liderazgo, Responsable.
+Referencias disponibles a pedido.

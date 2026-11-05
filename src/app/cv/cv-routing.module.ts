@@ -9,7 +9,9 @@ const routes: Routes = [
     title: (route) =>
       route.data['variant'] === 'general'
         ? 'Ignacio Arias | CV General'
-        : 'Ignacio Arias | CV',
+        : route.data['variant'] === 'escolar'
+          ? 'Ignacio Arias | CV Docente'
+          : 'Ignacio Arias | CV',
   },
 ];
 
