@@ -1,5 +1,6 @@
 import {
   Component,
+  ElementRef,
   HostBinding,
   HostListener,
   OnDestroy,
@@ -99,10 +100,12 @@ export class CvPage implements OnInit, OnDestroy {
 
   private cache: { [folder: string]: CvData } = {};
   private langSub?: Subscription;
+  private pageStyle?: HTMLStyleElement;
 
   constructor(
     private http: HttpClient,
     private translationService: TranslationService,
+    private el: ElementRef<HTMLElement>,
     route: ActivatedRoute,
   ) {
     const variant = route.snapshot.data['variant'];
@@ -115,7 +118,7 @@ export class CvPage implements OnInit, OnDestroy {
 
     if (this.isGeneral) {
       document.documentElement.lang = 'es';
-      this.langSub = this.loadCv(this.folder).subscribe((cv) => (this.cv = cv));
+      this.langSub = this.loadCv(this.folder).subscribe((cv) => this.setCv(cv));
       return;
     }
 
@@ -127,12 +130,45 @@ export class CvPage implements OnInit, OnDestroy {
         }),
         switchMap((lang) => this.loadCv(lang)),
       )
-      .subscribe((cv) => (this.cv = cv));
+      .subscribe((cv) => this.setCv(cv));
   }
 
   ngOnDestroy(): void {
     document.body.classList.remove('cv-print');
     this.langSub?.unsubscribe();
+    this.pageStyle?.remove();
+  }
+
+  /**
+   * Ajusta la página de impresión al alto del CV para que el PDF salga en una
+   * sola hoja larga (ancho A4) en vez de cortarse en varias hojas.
+   * Mide con la clase .cv-measure, que aplica el mismo layout que @media print.
+   */
+  @HostListener('window:beforeprint')
+  fitPageToContent(): void {
+    const host = this.el.nativeElement;
+    const cv = host.querySelector<HTMLElement>('main.cv');
+    if (!cv) {
+      return;
+    }
+
+    host.classList.add('cv-measure');
+    const height = Math.ceil(cv.getBoundingClientRect().height) + 2;
+    host.classList.remove('cv-measure');
+
+    if (!this.pageStyle) {
+      this.pageStyle = document.createElement('style');
+      document.head.appendChild(this.pageStyle);
+    }
+    this.pageStyle.textContent = `@page { size: 210mm ${height}px; margin: 0; }`;
+  }
+
+  private setCv(cv: CvData): void {
+    this.cv = cv;
+    // Se recalcula ya renderizado y con las fuentes cargadas, para que también
+    // funcione al generar el PDF sin abrir el diálogo de impresión
+    setTimeout(() => this.fitPageToContent());
+    document.fonts?.ready.then(() => this.fitPageToContent());
   }
 
   get pdfUrl(): string {

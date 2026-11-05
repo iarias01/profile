@@ -955,9 +955,12 @@ $g-teal-light: #5eead4;
   }
 }
 
-// Impresión / exportar a PDF
-@media print {
-  :host {
+// Impresión / exportar a PDF.
+// El layout de impresión es un mixin para poder aplicarlo también en pantalla
+// (clase .cv-measure) y medir el alto real del CV: con ese alto la página del
+// PDF se ajusta al contenido y sale en una sola hoja larga (ver fitPageToContent).
+@mixin print-layout($host) {
+  #{$host} {
     position: static;
     overflow: visible;
     contain: none;
@@ -965,59 +968,73 @@ $g-teal-light: #5eead4;
     font-size: 12px;
   }
 
-  .cv-page {
+  #{$host} .cv-page {
     height: auto;
     overflow: visible;
     padding: 0;
   }
 
-  .toolbar,
-  .extras-btn,
-  .extras-fab,
-  .drawer,
-  .drawer-backdrop {
+  #{$host} .toolbar,
+  #{$host} .extras-btn,
+  #{$host} .extras-fab,
+  #{$host} .drawer,
+  #{$host} .drawer-backdrop {
     display: none;
   }
 
-  .sidebar__extras {
+  #{$host} .sidebar__extras {
     display: flex;
   }
 
-  .cv,
-  :host(.is-general) .cv {
+  #{$host} .cv {
     max-width: none;
     border-radius: 0;
     box-shadow: none;
     grid-template-columns: 250px minmax(0, 1fr);
   }
 
-  // Que un título de sección no quede solo al pie de una página
-  .section__title {
-    break-after: avoid;
-    break-inside: avoid;
-  }
-
-  .profile__name {
+  #{$host} .profile__name {
     display: none;
   }
 
-  .hero {
+  #{$host} .hero {
     display: block;
   }
 
-  .sidebar {
+  #{$host} .sidebar {
     padding: 28px 20px;
   }
 
-  .content {
+  #{$host} .content {
     padding: 32px;
   }
 
-  .hero__title {
+  #{$host} .hero__title {
     font-size: 40px;
   }
 
-  .education {
+  #{$host} .education {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media print {
+  @include print-layout(":host");
+
+  :host(.is-general) .cv {
+    box-shadow: none;
+  }
+}
+
+// Medición: mismo layout que la impresión, al ancho de una hoja A4
+@include print-layout(":host(.cv-measure)");
+
+:host(.cv-measure) .cv-page {
+  width: 210mm;
+}
+
+// En la hoja impresa nunca aplica el layout de celular (max-width: 480px)
+:host(.cv-measure) .job__head {
+  flex-direction: row;
+  gap: 16px;
 }
