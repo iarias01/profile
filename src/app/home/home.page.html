@@ -68,7 +68,7 @@
                 {{ 'nav.cv_it' | translate }}
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a
                 class="navbar__dropdown-item"
                 routerLink="/cv-general"
@@ -77,7 +77,7 @@
                 <ion-icon name="briefcase-outline"></ion-icon>
                 {{ 'nav.cv_general' | translate }}
               </a>
-            </li>
+            </li> -->
             <li>
               <a
                 class="navbar__dropdown-item"
@@ -186,7 +186,11 @@
 
     <div class="hero__content animate__animated animate__fadeIn">
       <div class="hero__photo-ring animate__animated animate__zoomIn">
-        <img class="hero__photo" src="assets/yo2-hero.png" alt="Ignacio Arias" />
+        <img
+          class="hero__photo"
+          src="assets/yo2-hero.png"
+          alt="Ignacio Arias"
+        />
       </div>
 
       <span
@@ -663,9 +667,7 @@
     </div>
     <div class="portfolio__card-body">
       <span class="portfolio__card-cat">{{ project.category }}</span>
-      <h3 class="portfolio__card-title">
-        {{ getProjectTitle(project) }}
-      </h3>
+      <h3 class="portfolio__card-title">{{ getProjectTitle(project) }}</h3>
       <p class="portfolio__card-desc">{{ getProjectDesc(project) }}</p>
       <div class="portfolio__card-tags">
         <span class="portfolio__tag" *ngFor="let tag of project.tags"
