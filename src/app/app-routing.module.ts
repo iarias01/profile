@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'cv-general',
     loadChildren: () => import('./cv/cv.module').then((m) => m.CvPageModule),
-    data: { variant: 'general' },
+    data: { variant: 'escolar' },
   },
   {
     path: 'cv-escolar',
