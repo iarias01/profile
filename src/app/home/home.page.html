@@ -88,6 +88,16 @@
                 {{ 'nav.cv_escolar' | translate }}
               </a>
             </li>
+            <li>
+              <a
+                class="navbar__dropdown-item"
+                routerLink="/cv-gym"
+                (click)="cvMenuOpen = false"
+              >
+                <ion-icon name="barbell-outline"></ion-icon>
+                {{ 'nav.cv_gym' | translate }}
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -166,6 +176,14 @@
           routerLink="/cv-escolar"
           (click)="closeMenu()"
           >{{ 'nav.cv_escolar' | translate }}</a
+        >
+      </li>
+      <li>
+        <a
+          class="mobile-menu__link"
+          routerLink="/cv-gym"
+          (click)="closeMenu()"
+          >{{ 'nav.cv_gym' | translate }}</a
         >
       </li>
     </ul>

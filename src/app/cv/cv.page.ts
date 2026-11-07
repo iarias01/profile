@@ -90,7 +90,7 @@ interface CvData {
 export class CvPage implements OnInit, OnDestroy {
   currentLang = 'es';
   cv?: CvData;
-  // 'general' y 'escolar': CVs no relacionados al IT, solo en español.
+  // 'general', 'escolar' y 'gym': CVs no relacionados al IT, solo en español.
   // Comparten estilos; cada uno lee los datos de su propia carpeta.
   @HostBinding('class.is-general') readonly isGeneral: boolean;
   private readonly folder: string;
@@ -109,7 +109,7 @@ export class CvPage implements OnInit, OnDestroy {
     route: ActivatedRoute,
   ) {
     const variant = route.snapshot.data['variant'];
-    this.isGeneral = variant === 'general' || variant === 'escolar';
+    this.isGeneral = ['general', 'escolar', 'gym'].includes(variant);
     this.folder = this.isGeneral ? variant : '';
   }
 

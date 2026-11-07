@@ -1,0 +1,29 @@
+{
+  "title": "Actividades",
+  "data": [
+    {
+      "name": "Entrenamiento",
+      "icon": "gym.jpg"
+    },
+    {
+      "name": "Salsa y Bachata",
+      "icon": "salsa.jpg"
+    },
+    {
+      "name": "Tennis",
+      "icon": "tennis.jpg"
+    },
+    {
+      "name": "Volleyball",
+      "icon": "voley.jpg"
+    },
+    {
+      "name": "Piano",
+      "icon": "piano.jpg"
+    },
+    {
+      "name": "Magia",
+      "icon": "magic.jpg"
+    }
+  ]
+}

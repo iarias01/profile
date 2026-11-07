@@ -9,7 +9,8 @@
     "cv": "Resume",
     "cv_it": "IT Resume",
     "cv_general": "General Resume",
-    "cv_escolar": "Teaching Resume"
+    "cv_escolar": "Teaching Resume",
+    "cv_gym": "Trainer Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",

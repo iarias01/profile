@@ -11,7 +11,9 @@ const routes: Routes = [
         ? 'Ignacio Arias | CV General'
         : route.data['variant'] === 'escolar'
           ? 'Ignacio Arias | CV Docente'
-          : 'Ignacio Arias | CV',
+          : route.data['variant'] === 'gym'
+            ? 'Ignacio Arias | CV Entrenador'
+            : 'Ignacio Arias | CV',
   },
 ];
 

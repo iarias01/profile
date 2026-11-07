@@ -1,0 +1,86 @@
+[
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Curso Internacional de Personal Trainer y Musculación",
+    "desde": "09/2019",
+    "hasta": "07/2020",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#047857",
+    "icono": "barbell-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Preparación Física Deportiva",
+    "desde": "03/2020",
+    "hasta": "07/2020",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#15803d",
+    "icono": "stopwatch-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Instructor de Fitness Grupal / Máster en Funcional",
+    "desde": "08/2020",
+    "hasta": "12/2020",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#0f766e",
+    "icono": "people-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Nutrición Deportiva",
+    "desde": "03/2022",
+    "hasta": "06/2022",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#65a30d",
+    "icono": "nutrition-outline"
+  },
+  {
+    "institucion": "I.S.F.D. N° 41 · Adrogué",
+    "titulo": "Profesorado de Matemáticas",
+    "desde": "02/2011",
+    "hasta": "02/2015",
+    "ubicacion": "GBA Sur, Adrogué",
+    "nivel": "Terciario · Cursado",
+    "estado": "Incompleto",
+    "color": "#b45309",
+    "icono": "calculator-outline"
+  },
+  {
+    "institucion": "U.T.N. · Avellaneda",
+    "titulo": "Técnico Superior en Programación",
+    "desde": "02/2015",
+    "hasta": "02/2017",
+    "ubicacion": "GBA Sur, Avellaneda",
+    "nivel": "Terciario · Cursado",
+    "estado": "Incompleto",
+    "color": "#1d4ed8",
+    "icono": "code-slash-outline"
+  },
+  {
+    "institucion": "U.T.N. · Capital Federal",
+    "titulo": "Ingeniería en Sistemas de Información",
+    "desde": "02/2008",
+    "hasta": "02/2010",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "Universitario · Cursado",
+    "estado": "Incompleto",
+    "color": "#0e7490",
+    "icono": "hardware-chip-outline"
+  },
+  {
+    "institucion": "Colegio Modelo Mármol",
+    "titulo": "Bachiller en Cs. Naturales",
+    "desde": "03/2005",
+    "hasta": "12/2007",
+    "ubicacion": "Buenos Aires, Capital Federal",
+    "nivel": "Secundario · Completo",
+    "estado": "Completo",
+    "color": "#475569",
+    "icono": "leaf-outline"
+  }
+]

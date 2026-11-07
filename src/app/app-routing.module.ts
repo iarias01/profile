@@ -29,6 +29,11 @@ const routes: Routes = [
     data: { variant: 'escolar' },
   },
   {
+    path: 'cv-gym',
+    loadChildren: () => import('./cv/cv.module').then((m) => m.CvPageModule),
+    data: { variant: 'gym' },
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
