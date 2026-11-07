@@ -56,8 +56,8 @@
     "icono": "people-outline"
   },
   {
-    "empresa": "Entrenamiento Personal",
-    "desde": "2020",
+    "empresa": "Entrenamiento Particular",
+    "desde": "2023",
     "hasta": "Presente",
     "ubicacion": "Buenos Aires · Argentina",
     "modalidad_de_trabajo": "Presencial",
@@ -68,6 +68,20 @@
     "tecnologias": "Planificación, Condición física, Seguimiento",
     "color": "#047857",
     "icono": "barbell-outline"
+  },
+  {
+    "empresa": "Cursos de Entrenamiento Funcional",
+    "desde": "03/2022",
+    "hasta": "08/2022",
+    "ubicacion": "Buenos Aires · Argentina",
+    "modalidad_de_trabajo": "Presencial",
+    "puesto": "Instructor de Entrenamiento Funcional",
+    "referencia": "",
+    "industria": "Actividad Física y Salud",
+    "tareas": "Dictado y coordinación de cursos grupales de entrenamiento funcional: planificación de las clases, manejo de grupos y adaptación de los ejercicios al nivel de cada participante.",
+    "tecnologias": "Clases grupales, Manejo de grupos, Planificación, Entrenamiento funcional",
+    "color": "#0f766e",
+    "icono": "fitness-outline"
   },
   {
     "empresa": "Salsa y Bachata",
