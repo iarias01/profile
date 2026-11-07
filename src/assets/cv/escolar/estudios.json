@@ -12,13 +12,43 @@
   },
   {
     "institucion": "IDA Internacional",
-    "titulo": "Entrenador Personal",
+    "titulo": "Curso Internacional de Personal Trainer y Musculación",
     "desde": "",
     "hasta": "",
     "nivel": "Certificación",
     "estado": "Completo",
     "color": "#047857",
     "icono": "barbell-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Preparación Física Deportiva",
+    "desde": "03/2021",
+    "hasta": "07/2021",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#15803d",
+    "icono": "stopwatch-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Instructor de Fitness Grupal / Máster en Funcional",
+    "desde": "08/2021",
+    "hasta": "12/2021",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#0f766e",
+    "icono": "people-outline"
+  },
+  {
+    "institucion": "IDA Internacional",
+    "titulo": "Nutrición Deportiva",
+    "desde": "03/2022",
+    "hasta": "06/2022",
+    "nivel": "Certificación",
+    "estado": "Completo",
+    "color": "#65a30d",
+    "icono": "nutrition-outline"
   },
   {
     "institucion": "U.T.N. · Avellaneda",
