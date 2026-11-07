@@ -160,7 +160,7 @@ export class CvPage implements OnInit, OnDestroy {
       this.pageStyle = document.createElement('style');
       document.head.appendChild(this.pageStyle);
     }
-    this.pageStyle.textContent = `@page { size: 210mm ${height}px; margin: 0; }`;
+    this.pageStyle.textContent = `@page { size: 260mm ${height}px; margin: 0; }`;
   }
 
   private setCv(cv: CvData): void {

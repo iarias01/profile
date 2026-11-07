@@ -1026,11 +1026,12 @@ $g-teal-light: #5eead4;
   }
 }
 
-// Medición: mismo layout que la impresión, al ancho de una hoja A4
+// Medición: mismo layout que la impresión, al ancho de la hoja del PDF (260mm,
+// más ancha que A4; debe coincidir con el @page de fitPageToContent en cv.page.ts)
 @include print-layout(":host(.cv-measure)");
 
 :host(.cv-measure) .cv-page {
-  width: 210mm;
+  width: 260mm;
 }
 
 // En la hoja impresa nunca aplica el layout de celular (max-width: 480px)
