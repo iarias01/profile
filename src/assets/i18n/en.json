@@ -55,6 +55,20 @@
     "backend_title": "API & Integrations",
     "backend_desc": "REST API development, third-party service integrations, and scalable backend architectures."
   },
+  "classes": {
+    "section_label": "— Classes",
+    "section_title": "Want to take classes?",
+    "subtitle": "Math, Computing, Programming, Dance! Pick one and get your quote instantly.",
+    "cta": "Get a quote",
+    "math_title": "Math",
+    "math_desc": "Algebra, functions, geometry and exam prep, explained step by step.",
+    "computing_title": "Computing",
+    "computing_desc": "Learn to use your computer with confidence: Office, internet and files.",
+    "programming_title": "Programming",
+    "programming_desc": "Logic, algorithms and your first lines of code, from scratch.",
+    "dance_title": "Dance",
+    "dance_desc": "Group salsa and bachata classes. Your group, your rhythm."
+  },
   "portfolio": {
     "section_label": "— Portfolio",
     "section_title": "Featured Projects",

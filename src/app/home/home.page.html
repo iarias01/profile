@@ -471,6 +471,39 @@
   </section>
 
   <!-- ================================================================
+       CLASSES
+  ================================================================ -->
+  <section class="classes section" id="classes">
+    <div class="classes__container container">
+      <div class="classes__header reveal-on-scroll">
+        <span class="label">{{ 'classes.section_label' | translate }}</span>
+        <h2 class="title">{{ 'classes.section_title' | translate }}</h2>
+        <p class="classes__subtitle">{{ 'classes.subtitle' | translate }}</p>
+      </div>
+
+      <div class="classes__grid">
+        <a
+          *ngFor="let item of classOptions"
+          class="classes__card reveal-on-scroll"
+          [ngClass]="'classes__card--' + item.theme"
+          [routerLink]="item.route"
+          [queryParams]="item.queryParams"
+        >
+          <div class="classes__card-icon">
+            <ion-icon [name]="item.icon"></ion-icon>
+          </div>
+          <h3 class="classes__card-title">{{ item.titleKey | translate }}</h3>
+          <p class="classes__card-desc">{{ item.descKey | translate }}</p>
+          <span class="classes__card-cta">
+            {{ 'classes.cta' | translate }}
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
        PORTFOLIO
   ================================================================ -->
   <section class="portfolio section" id="portfolio">

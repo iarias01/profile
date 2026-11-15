@@ -10,7 +10,12 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'clases',
+    path: 'classes',
+    loadChildren: () =>
+      import('./clases/clases.module').then((m) => m.ClasesModule),
+  },
+  {
+    path: 'classes',
     loadChildren: () =>
       import('./clases/clases.module').then((m) => m.ClasesModule),
   },

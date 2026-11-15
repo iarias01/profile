@@ -1,0 +1,192 @@
+<ion-content [fullscreen]="true" class="math-page">
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container navbar__inner">
+      <button class="brand" type="button" (click)="scrollTo('inicio')">
+        <span class="brand__mark" aria-hidden="true">π</span>
+        Aula Pi
+      </button>
+      <button
+        class="button button--outline button--small"
+        type="button"
+        (click)="scrollTo('presupuesto')"
+      >
+        Calcular
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="hero__formulas" aria-hidden="true">
+      <span class="f1">a² + b² = c²</span>
+      <span class="f2">∫ x dx = x²⁄2</span>
+      <span class="f3">f(x) = mx + b</span>
+      <span class="f4">√144 = 12</span>
+      <span class="f5">Σ n = n(n+1)⁄2</span>
+      <span class="f6">sen²α + cos²α = 1</span>
+    </div>
+
+    <div class="container hero__content">
+      <p class="eyebrow reveal">
+        <ion-icon name="calculator-outline" aria-hidden="true"></ion-icon>
+        Clases de matemática
+      </p>
+      <h1 class="reveal delay-1">
+        Que los números<br />
+        <span>sumen a tu favor.</span>
+      </h1>
+      <p class="hero__copy reveal delay-2">
+        Clases particulares para entender de verdad: álgebra, funciones,
+        geometría, ecuaciones y preparación de exámenes. Elegí cuántas horas
+        necesitás y conocé el valor al instante.
+      </p>
+      <button
+        class="button button--primary reveal delay-2"
+        type="button"
+        (click)="scrollTo('presupuesto')"
+      >
+        Crear presupuesto
+        <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="presupuesto">
+      <div class="container">
+        <div class="section-heading">
+          <div class="reveal">
+            <p class="eyebrow">Calculadora</p>
+            <h2>Armá tu clase</h2>
+          </div>
+          <p class="muted reveal delay-1">
+            Un valor simple: {{ rateLabel }} por hora. Multiplicá por las horas
+            que necesites.
+          </p>
+        </div>
+
+        <div class="calculator reveal">
+          <form class="form-panel" (submit)="$event.preventDefault()">
+            <fieldset>
+              <legend>Materia</legend>
+              <div class="subject-card" aria-current="true">
+                <span class="subject-card__icon" aria-hidden="true">∑</span>
+                <div>
+                  <strong>Matemática</strong>
+                  <small
+                    >Álgebra · Funciones · Geometría · Ecuaciones ·
+                    Exámenes</small
+                  >
+                </div>
+                <ion-icon
+                  class="subject-card__check"
+                  name="checkmark-circle"
+                  aria-hidden="true"
+                ></ion-icon>
+              </div>
+              <p class="note">Por ahora es la única materia disponible.</p>
+            </fieldset>
+
+            <div class="hours-field">
+              <label for="hours">Cantidad de horas</label>
+              <div class="hours-control">
+                <button
+                  type="button"
+                  aria-label="Quitar una hora"
+                  (click)="changeHours(-1)"
+                >
+                  <ion-icon name="remove" aria-hidden="true"></ion-icon>
+                </button>
+                <input
+                  id="hours"
+                  name="hours"
+                  type="number"
+                  min="1"
+                  [max]="maxHours"
+                  inputmode="numeric"
+                  [(ngModel)]="hours"
+                  (blur)="normalizeInput()"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar una hora"
+                  (click)="changeHours(1)"
+                >
+                  <ion-icon name="add" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+              <small>Podés repartirlas en varias clases.</small>
+            </div>
+          </form>
+
+          <aside class="result-panel" aria-live="polite" aria-atomic="true">
+            <span class="result-panel__kicker">Total estimado</span>
+            <p class="result-panel__price">{{ total }}</p>
+            <p class="result-panel__equation">
+              {{ hours }} × {{ rateLabel }} = {{ total }}
+            </p>
+            <div class="result-meta">
+              <div>
+                <small>Horas</small><strong>{{ hoursLabel }}</strong>
+              </div>
+              <div>
+                <small>Por hora</small><strong>{{ rateLabel }}</strong>
+              </div>
+            </div>
+            <a
+              class="whatsapp-button"
+              [href]="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+              Contactar por WhatsApp
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--rates" id="tarifas">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Sin letra chica</p>
+          <h2>Tarifa clara</h2>
+        </div>
+        <div class="table-wrap reveal delay-1">
+          <table aria-label="Tarifas de clases de matemática">
+            <thead>
+              <tr>
+                <th>Materia</th>
+                <th>Horas</th>
+                <th>Por hora</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let example of examples">
+                <td>
+                  <span class="tag"
+                    ><ion-icon name="calculator-outline"></ion-icon>
+                    Matemática</span
+                  >
+                </td>
+                <td>{{ example }} {{ example === 1 ? 'hora' : 'horas' }}</td>
+                <td>{{ rateLabel }}</td>
+                <td>
+                  <strong>{{ formatPrice(example * hourlyRate) }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <span>Aula Pi · Clases de matemática</span>
+      <span>Presupuesto estimativo</span>
+    </div>
+  </footer>
+</ion-content>

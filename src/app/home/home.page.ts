@@ -82,6 +82,41 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
     { key: 'pwa', labelKey: 'portfolio.filter_pwa' },
   ];
 
+  classOptions = [
+    {
+      theme: 'math',
+      icon: 'calculator-outline',
+      titleKey: 'classes.math_title',
+      descKey: 'classes.math_desc',
+      route: '/classes/math',
+      queryParams: null,
+    },
+    {
+      theme: 'computing',
+      icon: 'desktop-outline',
+      titleKey: 'classes.computing_title',
+      descKey: 'classes.computing_desc',
+      route: '/classes/it',
+      queryParams: { materia: 'computacion' },
+    },
+    {
+      theme: 'programming',
+      icon: 'code-slash-outline',
+      titleKey: 'classes.programming_title',
+      descKey: 'classes.programming_desc',
+      route: '/classes/it',
+      queryParams: { materia: 'programacion' },
+    },
+    {
+      theme: 'dance',
+      icon: 'musical-notes-outline',
+      titleKey: 'classes.dance_title',
+      descKey: 'classes.dance_desc',
+      route: '/classes/dance',
+      queryParams: null,
+    },
+  ];
+
   constructor(
     private http: HttpClient,
     public translationService: TranslationService,

@@ -55,6 +55,20 @@
     "backend_title": "API & Integraciones",
     "backend_desc": "Desarrollo de APIs REST, integración con servicios de terceros y arquitecturas backend escalables."
   },
+  "classes": {
+    "section_label": "— Clases",
+    "section_title": "¿Querés tomar clases?",
+    "subtitle": "¡Matemática, Computación, Programación, Baile! Elegí una y calculá tu presupuesto al instante.",
+    "cta": "Ver presupuesto",
+    "math_title": "Matemática",
+    "math_desc": "Álgebra, funciones, geometría y preparación de exámenes, explicado paso a paso.",
+    "computing_title": "Computación",
+    "computing_desc": "Aprendé a usar la computadora con confianza: Office, internet y archivos.",
+    "programming_title": "Programación",
+    "programming_desc": "Lógica, algoritmos y tus primeras líneas de código, desde cero.",
+    "dance_title": "Baile",
+    "dance_desc": "Clases grupales de salsa y bachata. Tu grupo, tu ritmo."
+  },
   "portfolio": {
     "section_label": "— Portafolio",
     "section_title": "Proyectos Destacados",

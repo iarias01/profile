@@ -8,6 +8,16 @@ const routes: Routes = [
       import('./dance/dance.module').then((module) => module.DancePageModule),
   },
   {
+    path: 'it',
+    loadChildren: () =>
+      import('./it/it.module').then((module) => module.ItPageModule),
+  },
+  {
+    path: 'math',
+    loadChildren: () =>
+      import('./math/math.module').then((module) => module.MathPageModule),
+  },
+  {
     path: '',
     redirectTo: 'dance',
     pathMatch: 'full',

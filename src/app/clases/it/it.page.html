@@ -1,0 +1,234 @@
+<ion-content [fullscreen]="true" class="it-page">
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container navbar__inner">
+      <button class="brand" type="button" (click)="scrollTo('inicio')">
+        <span class="brand__mark" aria-hidden="true">&gt;_</span>
+        IT Lab
+      </button>
+      <button
+        class="button button--outline button--small"
+        type="button"
+        (click)="scrollTo('presupuesto')"
+      >
+        ./calcular
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow reveal">
+          <span class="eyebrow__dot" aria-hidden="true"></span>
+          Computación &amp; programación
+        </p>
+        <h1 class="reveal delay-1">
+          Hola,<br /><span>mundo<span class="caret">_</span></span>
+        </h1>
+        <p class="hero__copy reveal delay-2">
+          Clases para aprender a usar la computadora con confianza o escribir
+          tus primeras líneas de código. Elegí una materia o ambas, indicá
+          cuántas personas son y obtené el presupuesto al instante.
+        </p>
+        <button
+          class="button button--primary reveal delay-2"
+          type="button"
+          (click)="scrollTo('presupuesto')"
+        >
+          Crear presupuesto
+          <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <div class="hero__terminal reveal delay-2" aria-hidden="true">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <em>clase.ts</em>
+        </div>
+        <pre><code><span class="c">// tu primera clase</span>
+<span class="k">const</span> alumno = <span class="s">'vos'</span>;
+<span class="k">const</span> materias = [
+  <span class="s">'computación'</span>,
+  <span class="s">'programación'</span>,
+];
+
+<span class="k">for</span> (<span class="k">const</span> m <span class="k">of</span> materias) &#123;
+  alumno.<span class="f">aprender</span>(m);
+&#125;
+
+<span class="c">// output:</span>
+<span class="o">✔ listo para crear</span></code></pre>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="presupuesto">
+      <div class="container">
+        <div class="section-heading">
+          <div class="reveal">
+            <p class="eyebrow">~/calculadora</p>
+            <h2>Armá tu clase</h2>
+          </div>
+          <p class="muted reveal delay-1">
+            La duración y el valor por persona se ajustan automáticamente según
+            el tamaño del grupo.
+          </p>
+        </div>
+
+        <div class="calculator reveal">
+          <form class="form-panel" (submit)="$event.preventDefault()">
+            <fieldset>
+              <legend>¿Qué quieren aprender?</legend>
+              <div class="option-grid">
+                <label
+                  *ngFor="let option of options"
+                  class="option"
+                  [class.option--selected]="subject === option.key"
+                >
+                  <input
+                    type="radio"
+                    name="subject"
+                    [checked]="subject === option.key"
+                    (change)="selectSubject(option.key)"
+                  />
+                  <span class="option__top">
+                    <ion-icon [name]="option.icon" aria-hidden="true"></ion-icon>
+                    <code>$ {{ option.command }}</code>
+                  </span>
+                  <strong>{{ option.name }}</strong>
+                  <small>{{ option.detail }}</small>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="people-field">
+              <label for="people">Cantidad de personas</label>
+              <div class="people-control">
+                <button
+                  type="button"
+                  aria-label="Quitar una persona"
+                  (click)="changePeople(-1)"
+                >
+                  <ion-icon name="remove" aria-hidden="true"></ion-icon>
+                </button>
+                <input
+                  id="people"
+                  name="people"
+                  type="number"
+                  min="1"
+                  max="99"
+                  inputmode="numeric"
+                  [(ngModel)]="people"
+                  (blur)="normalizeInput()"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar una persona"
+                  (click)="changePeople(1)"
+                >
+                  <ion-icon name="add" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+              <small>// el descuento grupal se aplica desde 7 personas</small>
+            </div>
+          </form>
+
+          <aside class="result-panel" aria-live="polite" aria-atomic="true">
+            <span class="result-panel__kicker">$ total --grupo</span>
+            <p class="result-panel__price">{{ total }}</p>
+            <p class="result-panel__summary">{{ summary }}</p>
+            <div class="result-meta">
+              <div>
+                <small>duración</small><strong>{{ rate.minutes }} min</strong>
+              </div>
+              <div>
+                <small>por_persona</small
+                ><strong>{{ pricePerPerson }}</strong>
+              </div>
+            </div>
+            <a
+              class="whatsapp-button"
+              [href]="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+              Contactar por WhatsApp
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--rates" id="tarifas">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">cat tarifas.json</p>
+          <h2>Tarifas claras</h2>
+        </div>
+        <div class="table-wrap reveal delay-1">
+          <table aria-label="Tarifas de clases de computación y programación">
+            <thead>
+              <tr>
+                <th>Modalidad</th>
+                <th>Grupo</th>
+                <th>Duración</th>
+                <th>Por persona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="tag"
+                    ><ion-icon name="code-outline"></ion-icon> Una materia</span
+                  >
+                </td>
+                <td>Hasta 6 personas</td>
+                <td>45 minutos</td>
+                <td><strong>$8.000</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="tag"
+                    ><ion-icon name="code-outline"></ion-icon> Una materia</span
+                  >
+                </td>
+                <td>7 personas o más</td>
+                <td>60 minutos</td>
+                <td><strong>$6.000</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="tag"
+                    ><ion-icon name="layers-outline"></ion-icon> Ambas</span
+                  >
+                </td>
+                <td>Hasta 6 personas</td>
+                <td>90 minutos</td>
+                <td><strong>$12.000</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="tag"
+                    ><ion-icon name="layers-outline"></ion-icon> Ambas</span
+                  >
+                </td>
+                <td>7 personas o más</td>
+                <td>110 minutos</td>
+                <td><strong>$10.000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <span>IT Lab · Clases de computación y programación</span>
+      <span>Presupuesto estimativo</span>
+    </div>
+  </footer>
+</ion-content>
