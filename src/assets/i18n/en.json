@@ -58,7 +58,7 @@
   "classes": {
     "section_label": "— Classes",
     "section_title": "Want to take classes?",
-    "subtitle": "Math, Computing, Programming, Dance! Pick one and get your quote instantly.",
+    "subtitle": "Math, Computing, Programming, Dance and Training! Pick one and get your quote instantly.",
     "cta": "Get a quote",
     "math_title": "Math",
     "math_desc": "Algebra, functions, geometry and exam prep, explained step by step.",
@@ -67,7 +67,9 @@
     "programming_title": "Programming",
     "programming_desc": "Logic, algorithms and your first lines of code, from scratch.",
     "dance_title": "Dance",
-    "dance_desc": "Group salsa and bachata classes. Your group, your rhythm."
+    "dance_desc": "Group salsa and bachata classes. Your group, your rhythm.",
+    "gym_title": "Training",
+    "gym_desc": "Personal training: custom routines, in person, remote or in groups."
   },
   "portfolio": {
     "section_label": "— Portfolio",

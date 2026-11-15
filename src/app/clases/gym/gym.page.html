@@ -1,0 +1,256 @@
+<ion-content [fullscreen]="true" class="gym-page">
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container navbar__inner">
+      <button class="brand" type="button" (click)="scrollTo('inicio')">
+        <span class="brand__mark" aria-hidden="true">
+          <ion-icon name="barbell"></ion-icon>
+        </span>
+        Fuerza Pro
+      </button>
+      <button
+        class="button button--outline button--small"
+        type="button"
+        (click)="scrollTo('plan')"
+      >
+        Armar plan
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow reveal">
+          <ion-icon name="flash" aria-hidden="true"></ion-icon>
+          Entrenamiento personalizado
+        </p>
+        <h1 class="reveal delay-1">
+          Entrená<br />con un <span>plan.</span>
+        </h1>
+        <p class="hero__copy reveal delay-2">
+          Rutinas a medida, asesoramiento presencial o a distancia y
+          entrenamiento grupal. Contame tu objetivo y armamos juntos el plan
+          que mejor se adapte a vos.
+        </p>
+        <button
+          class="button button--primary reveal delay-2"
+          type="button"
+          (click)="scrollTo('plan')"
+        >
+          Armar mi plan
+          <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <div class="hero__photo reveal delay-2">
+        <img
+          src="assets/cv/actividades/gym.jpg"
+          alt="Persona preparando una barra con discos en el gimnasio"
+          width="500"
+          height="500"
+        />
+        <span class="hero__stamp">Precio<br />a convenir</span>
+      </div>
+    </div>
+    <div class="hero__tape" aria-hidden="true">
+      <span>{{ tapeText }}</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <div class="reveal">
+            <p class="eyebrow">Servicios</p>
+            <h2>Cómo te puedo ayudar</h2>
+          </div>
+          <p class="muted reveal delay-1">
+            Elegí uno o varios: se pueden combinar para armar el plan que
+            necesitás.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <button
+            *ngFor="let service of services; let i = index"
+            type="button"
+            class="service reveal"
+            [class.delay-1]="i % 4 === 1"
+            [class.delay-2]="i % 4 >= 2"
+            [class.service--selected]="selectedServices.has(service.key)"
+            [attr.aria-pressed]="selectedServices.has(service.key)"
+            (click)="toggleService(service.key)"
+          >
+            <span class="service__top">
+              <ion-icon [name]="service.icon" aria-hidden="true"></ion-icon>
+              <span class="service__check" aria-hidden="true">
+                <ion-icon name="checkmark"></ion-icon>
+              </span>
+            </span>
+            <strong>{{ service.name }}</strong>
+            <small>{{ service.detail }}</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="plan">
+      <div class="container">
+        <div class="section-heading">
+          <div class="reveal">
+            <p class="eyebrow">Tu consulta</p>
+            <h2>Armá tu plan</h2>
+          </div>
+          <p class="muted reveal delay-1">
+            El precio se define según la modalidad y la frecuencia. Mandame tu
+            consulta y te paso una propuesta.
+          </p>
+        </div>
+
+        <div class="planner reveal">
+          <div class="form-panel">
+            <fieldset>
+              <legend>Objetivo</legend>
+              <div class="chips">
+                <label
+                  *ngFor="let item of goals"
+                  class="chip"
+                  [class.chip--selected]="goal === item.key"
+                >
+                  <input
+                    type="radio"
+                    name="goal"
+                    [checked]="goal === item.key"
+                    (change)="goal = item.key"
+                  />
+                  {{ item.name }}
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Nivel</legend>
+              <div class="chips">
+                <label
+                  *ngFor="let item of levels"
+                  class="chip"
+                  [class.chip--selected]="level === item.key"
+                >
+                  <input
+                    type="radio"
+                    name="level"
+                    [checked]="level === item.key"
+                    (change)="level = item.key"
+                  />
+                  {{ item.name }}
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Días por semana</legend>
+              <div class="days">
+                <label
+                  *ngFor="let day of frequencies"
+                  class="day"
+                  [class.day--selected]="daysPerWeek === day"
+                >
+                  <input
+                    type="radio"
+                    name="days"
+                    [checked]="daysPerWeek === day"
+                    (change)="daysPerWeek = day"
+                  />
+                  {{ day }}
+                </label>
+              </div>
+            </fieldset>
+
+            <p class="hint">
+              <ion-icon name="information-circle-outline" aria-hidden="true">
+              </ion-icon>
+              Los servicios los elegís en la sección de arriba.
+            </p>
+          </div>
+
+          <aside class="result-panel" aria-live="polite" aria-atomic="true">
+            <span class="result-panel__kicker">Valor</span>
+            <p class="result-panel__price">A convenir</p>
+            <p class="result-panel__summary">
+              {{ goalName }} · {{ daysLabel }}
+            </p>
+
+            <div class="result-list">
+              <small>Servicios elegidos</small>
+              <ul *ngIf="selectedServiceNames.length; else noServices">
+                <li *ngFor="let name of selectedServiceNames">
+                  <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
+                  {{ name }}
+                </li>
+              </ul>
+              <ng-template #noServices>
+                <p class="result-list__empty">
+                  Ninguno todavía, lo definimos juntos.
+                </p>
+              </ng-template>
+            </div>
+
+            <a
+              class="whatsapp-button"
+              [href]="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+              Consultar por WhatsApp
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="metodo">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">El método</p>
+          <h2>Cómo trabajamos</h2>
+        </div>
+        <ol class="steps">
+          <li
+            *ngFor="let step of steps; let i = index"
+            class="step reveal"
+            [class.delay-1]="i === 1"
+            [class.delay-2]="i >= 2"
+          >
+            <span class="step__number">0{{ i + 1 }}</span>
+            <strong>{{ step.title }}</strong>
+            <p>{{ step.detail }}</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tight section--last" id="formacion">
+      <div class="container credentials reveal">
+        <div>
+          <p class="eyebrow">Formación</p>
+          <h2>Certificado en IDA Internacional</h2>
+        </div>
+        <ul>
+          <li *ngFor="let item of credentials">
+            <ion-icon name="ribbon-outline" aria-hidden="true"></ion-icon>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <span>Fuerza Pro · Entrenamiento personalizado</span>
+      <span>Precio a convenir</span>
+    </div>
+  </footer>
+</ion-content>

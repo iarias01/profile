@@ -115,6 +115,14 @@ export class HomePage implements OnInit, AfterViewInit, OnDestroy {
       route: '/classes/dance',
       queryParams: null,
     },
+    {
+      theme: 'gym',
+      icon: 'barbell-outline',
+      titleKey: 'classes.gym_title',
+      descKey: 'classes.gym_desc',
+      route: '/classes/gym',
+      queryParams: null,
+    },
   ];
 
   constructor(

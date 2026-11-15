@@ -936,11 +936,31 @@ ion-content {
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(6, 1fr);
+
+      // 3 arriba + 2 centradas abajo
+      .classes__card {
+        grid-column: span 2;
+      }
+      .classes__card:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
       grid-template-columns: repeat(2, 1fr);
+
+      .classes__card,
+      .classes__card:nth-child(4) {
+        grid-column: auto;
+      }
+      .classes__card:nth-child(5) {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1002,6 +1022,9 @@ ion-content {
     }
     &--dance {
       --accent: #ff5c4d;
+    }
+    &--gym {
+      --accent: #ff6b2c;
     }
   }
 

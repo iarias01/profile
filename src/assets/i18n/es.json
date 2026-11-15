@@ -58,7 +58,7 @@
   "classes": {
     "section_label": "— Clases",
     "section_title": "¿Querés tomar clases?",
-    "subtitle": "¡Matemática, Computación, Programación, Baile! Elegí una y calculá tu presupuesto al instante.",
+    "subtitle": "¡Matemática, Computación, Programación, Baile y Entrenamiento! Elegí una y calculá tu presupuesto al instante.",
     "cta": "Ver presupuesto",
     "math_title": "Matemática",
     "math_desc": "Álgebra, funciones, geometría y preparación de exámenes, explicado paso a paso.",
@@ -67,7 +67,9 @@
     "programming_title": "Programación",
     "programming_desc": "Lógica, algoritmos y tus primeras líneas de código, desde cero.",
     "dance_title": "Baile",
-    "dance_desc": "Clases grupales de salsa y bachata. Tu grupo, tu ritmo."
+    "dance_desc": "Clases grupales de salsa y bachata. Tu grupo, tu ritmo.",
+    "gym_title": "Entrenamiento",
+    "gym_desc": "Entrenamiento personalizado: rutinas a medida, presencial, a distancia o en grupo."
   },
   "portfolio": {
     "section_label": "— Portafolio",

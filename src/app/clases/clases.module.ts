@@ -18,6 +18,11 @@ const routes: Routes = [
       import('./math/math.module').then((module) => module.MathPageModule),
   },
   {
+    path: 'gym',
+    loadChildren: () =>
+      import('./gym/gym.module').then((module) => module.GymPageModule),
+  },
+  {
     path: '',
     redirectTo: 'dance',
     pathMatch: 'full',
