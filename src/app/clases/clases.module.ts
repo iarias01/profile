@@ -1,12 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { ClasesPageRoutingModule } from './clases-routing.module';
-import { ClasesPage } from './clases.page';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'dance',
+    loadChildren: () =>
+      import('./dance/dance.module').then((module) => module.DancePageModule),
+  },
+  {
+    path: '',
+    redirectTo: 'dance',
+    pathMatch: 'full',
+  },
+];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, ClasesPageRoutingModule],
-  declarations: [ClasesPage],
+  imports: [RouterModule.forChild(routes)],
 })
-export class ClasesPageModule {}
+export class ClasesModule {}

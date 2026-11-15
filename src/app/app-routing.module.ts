@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'clases',
     loadChildren: () =>
-      import('./clases/clases.module').then((m) => m.ClasesPageModule),
+      import('./clases/clases.module').then((m) => m.ClasesModule),
   },
   {
     path: 'cv',

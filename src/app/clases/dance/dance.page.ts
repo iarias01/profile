@@ -9,12 +9,12 @@ interface Rate {
 }
 
 @Component({
-  selector: 'app-clases',
-  templateUrl: './clases.page.html',
-  styleUrls: ['./clases.page.scss'],
+  selector: 'app-dance',
+  templateUrl: './dance.page.html',
+  styleUrls: ['./dance.page.scss'],
   standalone: false,
 })
-export class ClasesPage implements AfterViewInit, OnDestroy {
+export class DancePage implements AfterViewInit, OnDestroy {
   people = 1;
   rhythm: RhythmMode = 'single';
   rhythmName = 'Salsa';
