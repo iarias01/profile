@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-type SubjectKey = 'computacion' | 'programacion' | 'ambas';
+type SubjectKey = 'computacion' | 'programacion';
 type GroupSize = 'small' | 'large';
 
 interface Rate {
@@ -42,13 +42,6 @@ export class ItPage implements OnInit, AfterViewInit, OnDestroy {
       icon: 'code-slash-outline',
       detail: 'Lógica, algoritmos y tu primer código',
     },
-    {
-      key: 'ambas',
-      name: 'Ambas',
-      command: 'run --all',
-      icon: 'layers-outline',
-      detail: 'Computación + programación en una clase',
-    },
   ];
 
   private observer?: IntersectionObserver;
@@ -58,17 +51,10 @@ export class ItPage implements OnInit, AfterViewInit, OnDestroy {
     currency: 'ARS',
     maximumFractionDigits: 0,
   });
-  private readonly pricing: Record<'single' | 'both', Record<GroupSize, Rate>> =
-    {
-      single: {
-        small: { minutes: 45, price: 8000 },
-        large: { minutes: 60, price: 6000 },
-      },
-      both: {
-        small: { minutes: 90, price: 12000 },
-        large: { minutes: 110, price: 10000 },
-      },
-    };
+  private readonly pricing: Record<GroupSize, Rate> = {
+    small: { minutes: 45, price: 18000 },
+    large: { minutes: 60, price: 13500 },
+  };
 
   constructor(private readonly route: ActivatedRoute) {}
 
@@ -77,8 +63,7 @@ export class ItPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   get rate(): Rate {
-    const mode = this.subject === 'ambas' ? 'both' : 'single';
-    return this.pricing[mode][this.people <= 6 ? 'small' : 'large'];
+    return this.pricing[this.people <= 6 ? 'small' : 'large'];
   }
 
   get total(): string {
@@ -90,9 +75,7 @@ export class ItPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   get subjectLabel(): string {
-    return this.subject === 'ambas'
-      ? 'Computación + Programación'
-      : this.selected.name;
+    return this.selected.name;
   }
 
   get summary(): string {

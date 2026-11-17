@@ -7,7 +7,7 @@ import { AfterViewInit, Component, OnDestroy } from '@angular/core';
   standalone: false,
 })
 export class MathPage implements AfterViewInit, OnDestroy {
-  readonly hourlyRate = 15000;
+  readonly hourlyRate = 18000;
   readonly maxHours = 40;
   readonly examples = [1, 2, 4, 8];
   hours = 1;
